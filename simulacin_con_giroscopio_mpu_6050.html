@@ -1,0 +1,944 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Simulación con giroscopio (MPU 6050). | Practicas con Arduino </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Jorge Muñoz, Jorge Luis Loza, Manuel Hidalgo, Pablo Evaristo García" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-148"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">Practicas con Arduino</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Prácticas con Arduino para 4º de ESO</a></li>
+   <li><a href="fundamentos_de_arduino.html" class="daddy">Fundamentos de Arduino</a>
+   <ul class="other-section">
+      <li><a href="informacin_bsica_sobre_arduino.html" class="no-ch">Información básica sobre Arduino</a></li>
+      <li><a href="hardware.html" class="daddy">Hardware</a>
+      <ul class="other-section">
+         <li><a href="alimentacin_elctrica_de_arduino.html" class="no-ch">Alimentación eléctrica de Arduino</a></li>
+      </ul>
+      </li>
+      <li><a href="entorno_de_programacin.html" class="no-ch">Entorno de programación</a></li>
+   </ul>
+   </li>
+   <li><a href="una_placa_de_apoyo_edubsica.html" class="no-ch">Una placa de apoyo: Edubásica</a></li>
+   <li><a href="montajes_bsicos_con_arduino.html" class="daddy">Montajes básicos con Arduino</a>
+   <ul class="other-section">
+      <li><a href="conexiones_digitales.html" class="daddy">Conexiones digitales</a>
+      <ul class="other-section">
+         <li><a href="resistencias_pullup_y_pulldown.html" class="no-ch">Resistencias pull-up y pull-down</a></li>
+         <li><a href="montaje_1_led_parpadeante.html" class="no-ch">Montaje 1: LED parpadeante</a></li>
+         <li><a href="montaje_2_semforo.html" class="no-ch">Montaje 2: Semáforo</a></li>
+         <li><a href="montaje_3_pulsador.html" class="no-ch">Montaje 3: Pulsador</a></li>
+      </ul>
+      </li>
+      <li><a href="conexiones_analgicas.html" class="no-ch">Conexiones analógicas</a></li>
+      <li><a href="un_caso_especial_seales_pwm.html" class="daddy">Un caso especial: Señales PWM</a>
+      <ul class="other-section">
+         <li><a href="control_de_la_intensidad_de_iluminacin_de_un_led.html" class="no-ch">Control de la intensidad de iluminación de un LED</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="electrnica_analgica.html" class="daddy">Electrónica analógica</a>
+   <ul class="other-section">
+      <li><a href="resistencias.html" class="daddy">Resistencias</a>
+      <ul class="other-section">
+         <li><a href="montaje_1_interruptor.html" class="no-ch">Montaje 1: Interruptor</a></li>
+         <li><a href="montaje_2_potencimetro.html" class="no-ch">Montaje 2: Potenciómetro</a></li>
+         <li><a href="montaje_3_resistencias_en_serie.html" class="no-ch">Montaje 3: Resistencias en serie</a></li>
+         <li><a href="montaje_4_resistencias_en_paralelo.html" class="no-ch">Montaje 4: Resistencias en paralelo.</a></li>
+         <li><a href="montaje_5_sensor_de_luz_ldr.html" class="daddy">Montaje 5: Sensor de luz (LDR)</a>
+         <ul class="other-section">
+            <li><a href="mapeo_de_valores.html" class="no-ch">Mapeo de valores</a></li>
+         </ul>
+         </li>
+         <li><a href="montaje_6_ldr_con_edubasica.html" class="no-ch">Montaje 6: LDR con Edubasica</a></li>
+      </ul>
+      </li>
+      <li><a href="diodos.html" class="daddy">Diodos</a>
+      <ul class="other-section">
+         <li><a href="regular_intesidad_de_un_led_con_edubasica.html" class="no-ch">Regular intesidad de un LED con Edubasica</a></li>
+         <li><a href="estudio_de_la_tensin_umbral_de_un_led.html" class="no-ch">Estudio de la tensión umbral de un LED</a></li>
+      </ul>
+      </li>
+      <li><a href="condensadores.html" class="no-ch">Condensadores</a></li>
+      <li><a href="transistores.html" class="daddy">Transistores</a>
+      <ul class="other-section">
+         <li><a href="recta_de_carga_de_un_transistor.html" class="no-ch">Recta de carga de un transistor</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="electrnica_digital.html" class="daddy">Electrónica digital</a>
+   <ul class="other-section">
+      <li><a href="lgebra_de_boole.html" class="no-ch">Álgebra de Boole</a></li>
+      <li><a href="montajes_bsicos_pulsador.html" class="no-ch">Montajes básicos: PULSADOR.</a></li>
+      <li><a href="montajes_bsicos_elevador.html" class="no-ch">Montajes básicos: ELEVADOR.</a></li>
+      <li><a href="montajes_bsicos_alarma_en_vivienda.html" class="no-ch">Montajes básicos: ALARMA EN VIVIENDA.</a></li>
+   </ul>
+   </li>
+   <li><a href="tecnologas_de_la_comunicacin.html" class="daddy">Tecnologías de la comunicación</a>
+   <ul class="other-section">
+      <li><a href="bluetooth_y_arduino.html" class="daddy">Bluetooth y Arduino</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="bluetooth_maestro.html" class="no-ch">Bluetooth maestro</a></li>
+      <li><a href="arduino_y_dispositivos_mviles.html" class="daddy">Arduino y dispositivos móviles</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas0.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa0.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades0.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="conexin_entre_dos_arduinos_por_cable.html" class="daddy">Conexión entre dos Arduinos por cable</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas1.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa1.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades1.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="control_y_robtica.html" class="daddy">Control y robótica</a>
+   <ul class="other-section">
+      <li><a href="sensor_de_infrarrojos_cny70.html" class="daddy">Sensor de infrarrojos CNY70</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas2.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa2.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades2.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="sensor_de_infrarrojos_sharp_gp2d12.html" class="daddy">Sensor de infrarrojos SHARP GP2D12</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas3.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa3.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades3.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="sensor_de_ultrasonidos.html" class="daddy">Sensor de ultrasonidos</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas4.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa4.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades4.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="control_de_servomotores.html" class="daddy">Control de servomotores</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas5.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa5.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades5.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="control_de_motores_dc.html" class="daddy">Control de motores DC</a>
+      <ul class="other-section">
+         <li><a href="montaje_con_transistor.html" class="daddy">Montaje con transistor</a>
+         <ul class="other-section">
+            <li><a href="descripcin_y_esquemas6.html" class="no-ch">Descripción y esquemas</a></li>
+            <li><a href="programa6.html" class="no-ch">Programa</a></li>
+            <li><a href="actividades6.html" class="no-ch">Actividades</a></li>
+         </ul>
+         </li>
+         <li><a href="montaje_con_circuito_l293.html" class="daddy">Montaje con Circuito L293</a>
+         <ul class="other-section">
+            <li><a href="descripcin_y_esquemas7.html" class="no-ch">Descripción y esquemas</a></li>
+            <li><a href="programa7.html" class="no-ch">Programa</a></li>
+            <li><a href="actividades7.html" class="no-ch">Actividades</a></li>
+         </ul>
+         </li>
+         <li><a href="accionamiento_con_edubsica.html" class="no-ch">Accionamiento con Edubásica</a></li>
+      </ul>
+      </li>
+      <li><a href="acelermetro.html" class="daddy">Acelerómetro</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas8.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa8.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades8.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_parking_con_barrera.html" class="daddy">Proyecto: Parking con barrera</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas9.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa9.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades9.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_tacmetro.html" class="daddy">Proyecto: Tacómetro</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas10.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa10.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades10.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_mquina_clasificadora_de_bolas.html" class="daddy">Proyecto: Máquina clasificadora de bolas</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas11.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa11.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades11.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="instalaciones.html" class="daddy">Instalaciones</a>
+   <ul class="other-section">
+      <li><a href="la_casa_inteligente.html" class="daddy">La casa inteligente</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas12.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa12.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades12.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="neumtica.html" class="daddy">Neumática</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas13.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa13.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades13.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="prcticas_rpidas_para_el_aula.html" class="current-page-parent daddy">Prácticas rápidas para el aula</a>
+   <ul>
+      <li><a href="led_parpadeante.html" class="no-ch">LED parpadeante</a></li>
+      <li><a href="secuencia_de_led.html" class="no-ch">Secuencia de LED</a></li>
+      <li><a href="detector_de_luz.html" class="no-ch">Detector de luz</a></li>
+      <li><a href="detector_de_objetos_por_infrarrojos_ir.html" class="no-ch">Detector de objetos por infrarrojos (IR).</a></li>
+      <li><a href="detector_de_objetos_por_ultrasonidos_us.html" class="no-ch">Detector de objetos por ultrasonidos (US).</a></li>
+      <li><a href="comunicacin_por_bluetooth.html" class="no-ch">Comunicación por Bluetooth.</a></li>
+      <li><a href="medida_de_la_temperatura_y_la_humedad_ambiente.html" class="no-ch">Medida de la temperatura y la humedad ambiente.</a></li>
+      <li><a href="representacin_grfica_de_medidas_con_processing.html" class="no-ch">Representación gráfica de medidas con Processing.</a></li>
+      <li><a href="visualizacin_de_datos_en_la_nube_internet_de_las_cosas.html" class="no-ch">Visualización de datos en la nube. Internet de las cosas.</a></li>
+      <li><a href="uso_de_los_servomotores.html" class="no-ch">Uso de los servomotores.</a></li>
+      <li><a href="servos_de_rotacin_continua.html" class="no-ch">Servos de rotación continua.</a></li>
+      <li><a href="control_de_motores_dc0.html" class="daddy">Control de motores DC</a>
+      <ul class="other-section">
+         <li><a href="montaje_con_transistor0.html" class="no-ch">Montaje con transistor</a></li>
+         <li><a href="montaje_con_l293.html" class="no-ch">Montaje con L293</a></li>
+         <li><a href="shield_edubsica.html" class="no-ch">Shield Edubásica</a></li>
+      </ul>
+      </li>
+      <li><a href="acelermetro_y_giroscopio_mpu_6065.html" class="no-ch">Acelerómetro y giroscopio (MPU 6065).</a></li>
+      <li id="active"><a href="simulacin_con_giroscopio_mpu_6050.html" class="active no-ch">Simulación con giroscopio (MPU 6050).</a></li>
+   </ul>
+   </li>
+   <li><a href="crditos.html" class="no-ch">Créditos</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="acelermetro_y_giroscopio_mpu_6065.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="crditos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Simulación con giroscopio (MPU 6050).</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id293">
+<div class="iDevice emphasis0">
+<div id="ta293_85" class="block iDevice_content">
+<p><img src="acelerometro-giroscopio.jpg" width="200" height="196" alt="gyro" title="gyro" style="float: left; margin-left: 20px; margin-right: 20px;" /></p>
+<p></p>
+<p><strong>Realizar una simulación del movimiento del un modelo de avión en 3D, utilizando el módulo MPU 6050 que dispone de un acelerómetro y un giroscopio, mediante Arduino. El sensor enviará los datos por el puerto serie a un programa en Processing ejecutado en el ordenador, que orientará un modelo 3D básico de un avión según las coordenadas que reciba del sensor. </strong></p>
+<p>La dificultad de esta práctica radica en la instalación de las librerías adicionales tanto en Processing como en Arduino. El código está implementado por <span>Jeff Rowberg y está disponible en internet (se adjuntan los enlaces).</span></p>
+<p></p>
+<p></p>
+<p></p>
+<p>Vamos a ver el resultado de la demostración en el siguiente vídeo:</p>
+<p></p>
+<p><iframe width="400" height="230" src="https://www.youtube.com/embed/8sdV4af92eQ" frameborder="0" allowfullscreen=""></iframe></p>
+<p>Preparación de la demo:</p>
+<p></p>
+<ol>
+<li>Instala la librería I2Cdev.zip y MPU6050.zip en Arduino</li>
+<li>En Arduino carga el programa MPU6050_DMP6.ino</li>
+<li>Processing: Instala <a href="http://hg.postspectacular.com/toxiclibs/downloads/">toxiclibs-complete-0020.zip</a> (Descomprime y pega en <span style="font-size: 0.82em; line-height: 1.5;"><span style="font-size: small;">Sketchbook/libraries</span>)</span></li>
+<li><span style="font-size: small; line-height: 1.5;">Processing: Ejecuta MPUTeapot.pde</span></li>
+</ol>
+<p><span style="font-size: small; line-height: 1.5;">Descargas:</span></p>
+<p><span style="font-size: small; line-height: 1.5;">MPU6050_DMP6.ino, MPUTeapot.pde: <a href="https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050">https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050</a><a href="https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050"></a></span></p>
+<p><span style="font-size: small; line-height: 1.5;">I2Cdev: <a href="https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/I2Cdev">https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/I2Cdev</a></span></p>
+<p></p>
+<p></p>
+<p></p>
+<h3>ESQUEMA:</h3>
+<table border="1">
+<tbody>
+<tr>
+<td>ARDUINO</td>
+<td>MPU 6050</td>
+</tr>
+<tr>
+<td>5V</td>
+<td>VCC</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>SDA</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>SCL</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>INT</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id294">
+<div class="iDevice emphasis0">
+<div id="ta294_85" class="block iDevice_content">
+<h2>PROGRAMA A GARGAR EN ARDUINO:</h2>
+<style type="text/css"><!--
+pre {
+margin: 0 0 1em 1em;
+padding: 1em 1em 1em 1em;
+border: 1px solid #C80000;
+font-family: Courier, Monospace;
+font-size: 1em;
+background-color: #F6F6E3;
+}
+--></style>
+<pre><span style="color: #434f54;">// I2C device class (I2Cdev) demonstration Arduino sketch for MPU6050 class using DMP (MotionApps v2.0)</span>
+<span style="color: #434f54;">// 6/21/2012 by Jeff Rowberg &lt;jeff@rowberg.net&gt;</span>
+<span style="color: #434f54;">// Updates should (hopefully) always be available at https://github.com/jrowberg/i2cdevlib</span>
+<span style="color: #434f54;">//</span>
+<span style="color: #434f54;">// Changelog:</span>
+<span style="color: #434f54;">//      2013-05-08 - added seamless Fastwire support</span>
+<span style="color: #434f54;">//                 - added note about gyro calibration</span>
+<span style="color: #434f54;">//      2012-06-21 - added note about Arduino 1.0.1 + Leonardo compatibility error</span>
+<span style="color: #434f54;">//      2012-06-20 - improved FIFO overflow handling and simplified read process</span>
+<span style="color: #434f54;">//      2012-06-19 - completely rearranged DMP initialization code and simplification</span>
+<span style="color: #434f54;">//      2012-06-13 - pull gyro and accel data from FIFO packet instead of reading directly</span>
+<span style="color: #434f54;">//      2012-06-09 - fix broken FIFO read sequence and change interrupt detection to RISING</span>
+<span style="color: #434f54;">//      2012-06-05 - add gravity-compensated initial reference frame acceleration output</span>
+<span style="color: #434f54;">//                 - add 3D math helper file to DMP6 example sketch</span>
+<span style="color: #434f54;">//                 - add Euler output and Yaw/Pitch/Roll output formats</span>
+<span style="color: #434f54;">//      2012-06-04 - remove accel offset clearing for better results (thanks Sungon Lee)</span>
+<span style="color: #434f54;">//      2012-06-01 - fixed gyro sensitivity to be 2000 deg/sec instead of 250</span>
+<span style="color: #434f54;">//      2012-05-30 - basic DMP initialization working</span>
+
+<span style="color: #434f54;">/* ============================================</span>
+<span style="color: #434f54;">I2Cdev device library code is placed under the MIT license</span>
+<span style="color: #434f54;">Copyright (c) 2012 Jeff Rowberg</span>
+
+<span style="color: #434f54;">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span style="color: #434f54;">of this software and associated documentation files (the "Software"), to deal</span>
+<span style="color: #434f54;">in the Software without restriction, including without limitation the rights</span>
+<span style="color: #434f54;">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span style="color: #434f54;">copies of the Software, and to permit persons to whom the Software is</span>
+<span style="color: #434f54;">furnished to do so, subject to the following conditions:</span>
+
+<span style="color: #434f54;">The above copyright notice and this permission notice shall be included in</span>
+<span style="color: #434f54;">all copies or substantial portions of the Software.</span>
+
+<span style="color: #434f54;">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span style="color: #434f54;">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span style="color: #434f54;">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span style="color: #434f54;">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span style="color: #434f54;">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span style="color: #434f54;">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span style="color: #434f54;">THE SOFTWARE.</span>
+<span style="color: #434f54;">===============================================</span>
+<span style="color: #434f54;">*/</span>
+
+<span style="color: #434f54;">// I2Cdev and MPU6050 must be installed as libraries, or else the .cpp/.h files</span>
+<span style="color: #434f54;">// for both classes must be in the include path of your project</span>
+#include <span style="color: #006699;">"I2Cdev.h"</span>
+
+#include <span style="color: #006699;">"MPU6050_6Axis_MotionApps20.h"</span>
+<span style="color: #434f54;">//#include "MPU6050.h" // not necessary if using MotionApps include file</span>
+
+<span style="color: #434f54;">// Arduino Wire library is required if I2Cdev I2CDEV_ARDUINO_WIRE implementation</span>
+<span style="color: #434f54;">// is used in I2Cdev.h</span>
+#if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
+    #include <span style="color: #006699;">"Wire.h"</span>
+#endif
+
+<span style="color: #434f54;">// class default I2C address is 0x68</span>
+<span style="color: #434f54;">// specific I2C addresses may be passed as a parameter here</span>
+<span style="color: #434f54;">// AD0 low = 0x68 (default for SparkFun breakout and InvenSense evaluation board)</span>
+<span style="color: #434f54;">// AD0 high = 0x69</span>
+MPU6050 mpu;
+<span style="color: #434f54;">//MPU6050 mpu(0x69); // &lt;-- use for AD0 high</span>
+
+<span style="color: #434f54;">/* =========================================================================</span>
+<span style="color: #434f54;">   NOTE: In addition to connection 3.3v, GND, SDA, and SCL, this sketch</span>
+<span style="color: #434f54;">   depends on the MPU-6050's INT pin being connected to the Arduino's</span>
+<span style="color: #434f54;">   external interrupt #0 pin. On the Arduino Uno and Mega 2560, this is</span>
+<span style="color: #434f54;">   digital I/O pin 2.</span>
+<span style="color: #434f54;"> * ========================================================================= */</span>
+
+<span style="color: #434f54;">/* =========================================================================</span>
+<span style="color: #434f54;">   NOTE: Arduino v1.0.1 with the Leonardo board generates a compile error</span>
+<span style="color: #434f54;">   when using Serial.write(buf, len). The Teapot output uses this method.</span>
+<span style="color: #434f54;">   The solution requires a modification to the Arduino USBAPI.h file, which</span>
+<span style="color: #434f54;">   is fortunately simple, but annoying. This will be fixed in the next IDE</span>
+<span style="color: #434f54;">   release. For more info, see these links:</span>
+
+<span style="color: #434f54;">   http://arduino.cc/forum/index.php/topic,109987.0.html</span>
+<span style="color: #434f54;">   http://code.google.com/p/arduino/issues/detail?id=958</span>
+<span style="color: #434f54;"> * ========================================================================= */</span>
+
+
+
+<span style="color: #434f54;">// uncomment "OUTPUT_READABLE_QUATERNION" if you want to see the actual</span>
+<span style="color: #434f54;">// quaternion components in a [w, x, y, z] format (not best for parsing</span>
+<span style="color: #434f54;">// on a remote host such as Processing or something though)</span>
+<span style="color: #434f54;">//#define OUTPUT_READABLE_QUATERNION</span>
+
+<span style="color: #434f54;">// uncomment "OUTPUT_READABLE_EULER" if you want to see Euler angles</span>
+<span style="color: #434f54;">// (in degrees) calculated from the quaternions coming from the FIFO.</span>
+<span style="color: #434f54;">// Note that Euler angles suffer from gimbal lock (for more info, see</span>
+<span style="color: #434f54;">// http://en.wikipedia.org/wiki/Gimbal_lock)</span>
+<span style="color: #434f54;">//#define OUTPUT_READABLE_EULER</span>
+
+<span style="color: #434f54;">// uncomment "OUTPUT_READABLE_YAWPITCHROLL" if you want to see the yaw/</span>
+<span style="color: #434f54;">// pitch/roll angles (in degrees) calculated from the quaternions coming</span>
+<span style="color: #434f54;">// from the FIFO. Note this also requires gravity vector calculations.</span>
+<span style="color: #434f54;">// Also note that yaw/pitch/roll angles suffer from gimbal lock (for</span>
+<span style="color: #434f54;">// more info, see: http://en.wikipedia.org/wiki/Gimbal_lock)</span>
+#define OUTPUT_READABLE_YAWPITCHROLL
+
+<span style="color: #434f54;">// uncomment "OUTPUT_READABLE_REALACCEL" if you want to see acceleration</span>
+<span style="color: #434f54;">// components with gravity removed. This acceleration reference frame is</span>
+<span style="color: #434f54;">// not compensated for orientation, so +X is always +X according to the</span>
+<span style="color: #434f54;">// sensor, just without the effects of gravity. If you want acceleration</span>
+<span style="color: #434f54;">// compensated for orientation, us OUTPUT_READABLE_WORLDACCEL instead.</span>
+<span style="color: #434f54;">//#define OUTPUT_READABLE_REALACCEL</span>
+
+<span style="color: #434f54;">// uncomment "OUTPUT_READABLE_WORLDACCEL" if you want to see acceleration</span>
+<span style="color: #434f54;">// components with gravity removed and adjusted for the world frame of</span>
+<span style="color: #434f54;">// reference (yaw is relative to initial orientation, since no magnetometer</span>
+<span style="color: #434f54;">// is present in this case). Could be quite handy in some cases.</span>
+<span style="color: #434f54;">//#define OUTPUT_READABLE_WORLDACCEL</span>
+
+<span style="color: #434f54;">// uncomment "OUTPUT_TEAPOT" if you want output that matches the</span>
+<span style="color: #434f54;">// format used for the InvenSense teapot demo</span>
+#define OUTPUT_TEAPOT
+
+
+
+#define LED_PIN 13 <span style="color: #434f54;">// (Arduino is 13, Teensy is 11, Teensy++ is 6)</span>
+<span style="color: #d35400;">bool</span> blinkState = <span style="color: #00979c;">false</span>;
+
+<span style="color: #434f54;">// MPU control/status vars</span>
+<span style="color: #d35400;">bool</span> dmpReady = <span style="color: #00979c;">false</span>;  <span style="color: #434f54;">// set true if DMP init was successful</span>
+uint8_t mpuIntStatus;   <span style="color: #434f54;">// holds actual interrupt status byte from MPU</span>
+uint8_t devStatus;      <span style="color: #434f54;">// return status after each device operation (0 = success, !0 = error)</span>
+uint16_t packetSize;    <span style="color: #434f54;">// expected DMP packet size (default is 42 bytes)</span>
+uint16_t fifoCount;     <span style="color: #434f54;">// count of all bytes currently in FIFO</span>
+uint8_t fifoBuffer[64]; <span style="color: #434f54;">// FIFO storage buffer</span>
+
+<span style="color: #434f54;">// orientation/motion vars</span>
+Quaternion q;           <span style="color: #434f54;">// [w, x, y, z]         quaternion container</span>
+VectorInt16 aa;         <span style="color: #434f54;">// [x, y, z]            accel sensor measurements</span>
+VectorInt16 aaReal;     <span style="color: #434f54;">// [x, y, z]            gravity-free accel sensor measurements</span>
+VectorInt16 aaWorld;    <span style="color: #434f54;">// [x, y, z]            world-frame accel sensor measurements</span>
+VectorFloat gravity;    <span style="color: #434f54;">// [x, y, z]            gravity vector</span>
+<span style="color: #00979c;">float</span> euler[3];         <span style="color: #434f54;">// [psi, theta, phi]    Euler angle container</span>
+<span style="color: #00979c;">float</span> ypr[3];           <span style="color: #434f54;">// [yaw, pitch, roll]   yaw/pitch/roll container and gravity vector</span>
+
+<span style="color: #434f54;">// packet structure for InvenSense teapot demo</span>
+uint8_t teapotPacket[14] = { <span style="color: #006699;">'$'</span>, 0x02, 0,0, 0,0, 0,0, 0,0, 0x00, 0x00, <span style="color: #006699;">'\r'</span>, <span style="color: #006699;">'\n'</span> };
+
+
+
+<span style="color: #434f54;">// ================================================================</span>
+<span style="color: #434f54;">// ===               INTERRUPT DETECTION ROUTINE                ===</span>
+<span style="color: #434f54;">// ================================================================</span>
+
+volatile <span style="color: #d35400;">bool</span> mpuInterrupt = <span style="color: #00979c;">false</span>;     <span style="color: #434f54;">// indicates whether MPU interrupt pin has gone high</span>
+<span style="color: #00979c;">void</span> dmpDataReady() {
+    mpuInterrupt = <span style="color: #00979c;">true</span>;
+}
+
+
+
+<span style="color: #434f54;">// ================================================================</span>
+<span style="color: #434f54;">// ===                      INITIAL SETUP                       ===</span>
+<span style="color: #434f54;">// ================================================================</span>
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">setup</span>() {
+    <span style="color: #434f54;">// join I2C bus (I2Cdev library doesn't do this automatically)</span>
+    #if I2CDEV_IMPLEMENTATION == I2CDEV_ARDUINO_WIRE
+        <span style="color: #d35400;">Wire</span>.<span style="color: #d35400;">begin</span>();
+        TWBR = 24; <span style="color: #434f54;">// 400kHz I2C clock (200kHz if CPU is 8MHz)</span>
+    #elif I2CDEV_IMPLEMENTATION == I2CDEV_BUILTIN_FASTWIRE
+        Fastwire::<span style="color: #5e6d03;">setup</span>(400, <span style="color: #00979c;">true</span>);
+    #endif
+
+    <span style="color: #434f54;">// initialize serial communication</span>
+    <span style="color: #434f54;">// (115200 chosen because it is required for Teapot Demo output, but it's</span>
+    <span style="color: #434f54;">// really up to you depending on your project)</span>
+    <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">begin</span>(115200);
+    <span style="color: #5e6d03;">while</span> (!<span style="color: #d35400;"><b>Serial</b></span>); <span style="color: #434f54;">// wait for Leonardo enumeration, others continue immediately</span>
+
+    <span style="color: #434f54;">// NOTE: 8MHz or slower host processors, like the Teensy @ 3.3v or Ardunio</span>
+    <span style="color: #434f54;">// Pro Mini running at 3.3v, cannot handle this baud rate reliably due to</span>
+    <span style="color: #434f54;">// the baud timing being too misaligned with processor ticks. You must use</span>
+    <span style="color: #434f54;">// 38400 or slower in these cases, or use some kind of external separate</span>
+    <span style="color: #434f54;">// crystal solution for the UART timer.</span>
+
+    <span style="color: #434f54;">// initialize device</span>
+    <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(F(<span style="color: #006699;">"Initializing I2C devices..."</span>));
+    mpu.initialize();
+
+    <span style="color: #434f54;">// verify connection</span>
+    <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(F(<span style="color: #006699;">"Testing device connections..."</span>));
+    <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(mpu.testConnection() ? F(<span style="color: #006699;">"MPU6050 connection successful"</span>) : F(<span style="color: #006699;">"MPU6050 connection failed"</span>));
+
+    <span style="color: #434f54;">// wait for ready</span>
+    <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(F(<span style="color: #006699;">"\nSend any character to begin DMP programming and demo: "</span>));
+    <span style="color: #5e6d03;">while</span> (<span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">available</span>() &amp;&amp; <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">read</span>()); <span style="color: #434f54;">// empty buffer</span>
+    <span style="color: #5e6d03;">while</span> (!<span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">available</span>());                 <span style="color: #434f54;">// wait for data</span>
+    <span style="color: #5e6d03;">while</span> (<span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">available</span>() &amp;&amp; <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">read</span>()); <span style="color: #434f54;">// empty buffer again</span>
+
+    <span style="color: #434f54;">// load and configure the DMP</span>
+    <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(F(<span style="color: #006699;">"Initializing DMP..."</span>));
+    devStatus = mpu.dmpInitialize();
+
+    <span style="color: #434f54;">// supply your own gyro offsets here, scaled for min sensitivity</span>
+    mpu.setXGyroOffset(220);
+    mpu.setYGyroOffset(76);
+    mpu.setZGyroOffset(-85);
+    mpu.setZAccelOffset(1788); <span style="color: #434f54;">// 1688 factory default for my test chip</span>
+
+    <span style="color: #434f54;">// make sure it worked (returns 0 if so)</span>
+    <span style="color: #5e6d03;">if</span> (devStatus == 0) {
+        <span style="color: #434f54;">// turn on the DMP, now that it's ready</span>
+        <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(F(<span style="color: #006699;">"Enabling DMP..."</span>));
+        mpu.setDMPEnabled(<span style="color: #00979c;">true</span>);
+
+        <span style="color: #434f54;">// enable Arduino interrupt detection</span>
+        <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(F(<span style="color: #006699;">"Enabling interrupt detection (Arduino external interrupt 0)..."</span>));
+        <span style="color: #d35400;">attachInterrupt</span>(0, dmpDataReady, <span style="color: #00979c;">RISING</span>);
+        mpuIntStatus = mpu.getIntStatus();
+
+        <span style="color: #434f54;">// set our DMP Ready flag so the main loop() function knows it's okay to use it</span>
+        <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(F(<span style="color: #006699;">"DMP ready! Waiting for first interrupt..."</span>));
+        dmpReady = <span style="color: #00979c;">true</span>;
+
+        <span style="color: #434f54;">// get expected DMP packet size for later comparison</span>
+        packetSize = mpu.dmpGetFIFOPacketSize();
+    } <span style="color: #5e6d03;">else</span> {
+        <span style="color: #434f54;">// ERROR!</span>
+        <span style="color: #434f54;">// 1 = initial memory load failed</span>
+        <span style="color: #434f54;">// 2 = DMP configuration updates failed</span>
+        <span style="color: #434f54;">// (if it's going to break, usually the code will be 1)</span>
+        <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(F(<span style="color: #006699;">"DMP Initialization failed (code "</span>));
+        <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(devStatus);
+        <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(F(<span style="color: #006699;">")"</span>));
+    }
+
+    <span style="color: #434f54;">// configure LED for output</span>
+    <span style="color: #d35400;">pinMode</span>(LED_PIN, <span style="color: #00979c;">OUTPUT</span>);
+}
+
+
+
+<span style="color: #434f54;">// ================================================================</span>
+<span style="color: #434f54;">// ===                    MAIN PROGRAM LOOP                     ===</span>
+<span style="color: #434f54;">// ================================================================</span>
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">loop</span>() {
+    <span style="color: #434f54;">// if programming failed, don't try to do anything</span>
+    <span style="color: #5e6d03;">if</span> (!dmpReady) <span style="color: #5e6d03;">return</span>;
+
+    <span style="color: #434f54;">// wait for MPU interrupt or extra packet(s) available</span>
+    <span style="color: #5e6d03;">while</span> (!mpuInterrupt &amp;&amp; fifoCount &lt; packetSize) {
+        <span style="color: #434f54;">// other program behavior stuff here</span>
+        <span style="color: #434f54;">// .</span>
+        <span style="color: #434f54;">// .</span>
+        <span style="color: #434f54;">// .</span>
+        <span style="color: #434f54;">// if you are really paranoid you can frequently test in between other</span>
+        <span style="color: #434f54;">// stuff to see if mpuInterrupt is true, and if so, "break;" from the</span>
+        <span style="color: #434f54;">// while() loop to immediately process the MPU data</span>
+        <span style="color: #434f54;">// .</span>
+        <span style="color: #434f54;">// .</span>
+        <span style="color: #434f54;">// .</span>
+    }
+
+    <span style="color: #434f54;">// reset interrupt flag and get INT_STATUS byte</span>
+    mpuInterrupt = <span style="color: #00979c;">false</span>;
+    mpuIntStatus = mpu.getIntStatus();
+
+    <span style="color: #434f54;">// get current FIFO count</span>
+    fifoCount = mpu.getFIFOCount();
+
+    <span style="color: #434f54;">// check for overflow (this should never happen unless our code is too inefficient)</span>
+    <span style="color: #5e6d03;">if</span> ((mpuIntStatus &amp; 0x10) || fifoCount == 1024) {
+        <span style="color: #434f54;">// reset so we can continue cleanly</span>
+        mpu.resetFIFO();
+        <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(F(<span style="color: #006699;">"FIFO overflow!"</span>));
+
+    <span style="color: #434f54;">// otherwise, check for DMP data ready interrupt (this should happen frequently)</span>
+    } <span style="color: #5e6d03;">else</span> <span style="color: #5e6d03;">if</span> (mpuIntStatus &amp; 0x02) {
+        <span style="color: #434f54;">// wait for correct available data length, should be a VERY short wait</span>
+        <span style="color: #5e6d03;">while</span> (fifoCount &lt; packetSize) fifoCount = mpu.getFIFOCount();
+
+        <span style="color: #434f54;">// read a packet from FIFO</span>
+        mpu.getFIFOBytes(fifoBuffer, packetSize);
+        
+        <span style="color: #434f54;">// track FIFO count here in case there is &gt; 1 packet available</span>
+        <span style="color: #434f54;">// (this lets us immediately read more without waiting for an interrupt)</span>
+        fifoCount -= packetSize;
+
+        #ifdef OUTPUT_READABLE_QUATERNION
+            <span style="color: #434f54;">// display quaternion values in easy matrix form: w x y z</span>
+            mpu.dmpGetQuaternion(&amp;q, fifoBuffer);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"quat\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(q.w);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(q.x);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(q.y);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(q.z);
+        #endif
+
+        #ifdef OUTPUT_READABLE_EULER
+            <span style="color: #434f54;">// display Euler angles in degrees</span>
+            mpu.dmpGetQuaternion(&amp;q, fifoBuffer);
+            mpu.dmpGetEuler(euler, &amp;q);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"euler\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(euler[0] * 180/M_PI);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(euler[1] * 180/M_PI);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(euler[2] * 180/M_PI);
+        #endif
+
+        #ifdef OUTPUT_READABLE_YAWPITCHROLL
+            <span style="color: #434f54;">// display Euler angles in degrees</span>
+            mpu.dmpGetQuaternion(&amp;q, fifoBuffer);
+            mpu.dmpGetGravity(&amp;gravity, &amp;q);
+            mpu.dmpGetYawPitchRoll(ypr, &amp;q, &amp;gravity);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"ypr\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(ypr[0] * 180/M_PI);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(ypr[1] * 180/M_PI);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(ypr[2] * 180/M_PI);
+        #endif
+
+        #ifdef OUTPUT_READABLE_REALACCEL
+            <span style="color: #434f54;">// display real acceleration, adjusted to remove gravity</span>
+            mpu.dmpGetQuaternion(&amp;q, fifoBuffer);
+            mpu.dmpGetAccel(&amp;aa, fifoBuffer);
+            mpu.dmpGetGravity(&amp;gravity, &amp;q);
+            mpu.dmpGetLinearAccel(&amp;aaReal, &amp;aa, &amp;gravity);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"areal\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(aaReal.x);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(aaReal.y);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(aaReal.z);
+        #endif
+
+        #ifdef OUTPUT_READABLE_WORLDACCEL
+            <span style="color: #434f54;">// display initial world-frame acceleration, adjusted to remove gravity</span>
+            <span style="color: #434f54;">// and rotated based on known orientation from quaternion</span>
+            mpu.dmpGetQuaternion(&amp;q, fifoBuffer);
+            mpu.dmpGetAccel(&amp;aa, fifoBuffer);
+            mpu.dmpGetGravity(&amp;gravity, &amp;q);
+            mpu.dmpGetLinearAccel(&amp;aaReal, &amp;aa, &amp;gravity);
+            mpu.dmpGetLinearAccelInWorld(&amp;aaWorld, &amp;aaReal, &amp;q);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"aworld\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(aaWorld.x);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(aaWorld.y);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(<span style="color: #006699;">"\t"</span>);
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(aaWorld.z);
+        #endif
+    
+        #ifdef OUTPUT_TEAPOT
+            <span style="color: #434f54;">// display quaternion values in InvenSense Teapot demo format:</span>
+            teapotPacket[2] = fifoBuffer[0];
+            teapotPacket[3] = fifoBuffer[1];
+            teapotPacket[4] = fifoBuffer[4];
+            teapotPacket[5] = fifoBuffer[5];
+            teapotPacket[6] = fifoBuffer[8];
+            teapotPacket[7] = fifoBuffer[9];
+            teapotPacket[8] = fifoBuffer[12];
+            teapotPacket[9] = fifoBuffer[13];
+            <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">write</span>(teapotPacket, 14);
+            teapotPacket[11]++; <span style="color: #434f54;">// packetCount, loops at 0xFF on purpose</span>
+        #endif
+
+        <span style="color: #434f54;">// blink LED to indicate activity</span>
+        blinkState = !blinkState;
+        <span style="color: #d35400;">digitalWrite</span>(LED_PIN, blinkState);
+    }
+}
+</pre>
+<p></p>
+<h2>PROGRAMA A EJECUTAR EN PROCESSING (PC / LAPTOP):</h2>
+<style type="text/css"><!--
+pre {
+margin: 0 0 1em 1em;
+padding: 1em 1em 1em 1em;
+border: 1px solid #C80000;
+font-family: Courier, Monospace;
+font-size: 1em;
+background-color: #F6F6E3;
+}
+--></style>
+<pre><span style="color: #666666;">// I2C device class (I2Cdev) demonstration Processing sketch for MPU6050 DMP output</span>
+<span style="color: #666666;">// 6/20/2012 by Jeff Rowberg &lt;jeff@rowberg.net&gt;</span>
+<span style="color: #666666;">// Updates should (hopefully) always be available at https://github.com/jrowberg/i2cdevlib</span>
+<span style="color: #666666;">//</span>
+<span style="color: #666666;">// Changelog:</span>
+<span style="color: #666666;">//     2012-06-20 - initial release</span>
+
+<span style="color: #666666;">/* ============================================</span>
+<span style="color: #666666;">I2Cdev device library code is placed under the MIT license</span>
+<span style="color: #666666;">Copyright (c) 2012 Jeff Rowberg</span>
+
+<span style="color: #666666;">Permission is hereby granted, free of charge, to any person obtaining a copy</span>
+<span style="color: #666666;">of this software and associated documentation files (the "Software"), to deal</span>
+<span style="color: #666666;">in the Software without restriction, including without limitation the rights</span>
+<span style="color: #666666;">to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span>
+<span style="color: #666666;">copies of the Software, and to permit persons to whom the Software is</span>
+<span style="color: #666666;">furnished to do so, subject to the following conditions:</span>
+
+<span style="color: #666666;">The above copyright notice and this permission notice shall be included in</span>
+<span style="color: #666666;">all copies or substantial portions of the Software.</span>
+
+<span style="color: #666666;">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span>
+<span style="color: #666666;">IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span>
+<span style="color: #666666;">FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span>
+<span style="color: #666666;">AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span>
+<span style="color: #666666;">LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span>
+<span style="color: #666666;">OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span>
+<span style="color: #666666;">THE SOFTWARE.</span>
+<span style="color: #666666;">===============================================</span>
+<span style="color: #666666;">*/</span>
+
+<span style="color: #33997e;">import</span> processing.serial.*;
+<span style="color: #33997e;">import</span> processing.opengl.*;
+<span style="color: #33997e;">import</span> toxi.geom.*;
+<span style="color: #33997e;">import</span> toxi.processing.*;
+
+<span style="color: #666666;">// NOTE: requires ToxicLibs to be installed in order to run properly.</span>
+<span style="color: #666666;">// 1. Download from http://toxiclibs.org/downloads</span>
+<span style="color: #666666;">// 2. Extract into [userdir]/Processing/libraries</span>
+<span style="color: #666666;">//    (location may be different on Mac/Linux)</span>
+<span style="color: #666666;">// 3. Run and bask in awesomeness</span>
+
+ToxiclibsSupport gfx;
+
+Serial port;                         <span style="color: #666666;">// The serial port</span>
+<span style="color: #e2661a;">char</span>[] teapotPacket = <span style="color: #33997e;">new</span> <span style="color: #e2661a;">char</span>[14];  <span style="color: #666666;">// InvenSense Teapot packet</span>
+<span style="color: #e2661a;">int</span> serialCount = 0;                 <span style="color: #666666;">// current packet byte position</span>
+<span style="color: #e2661a;">int</span> synced = 0;
+<span style="color: #e2661a;">int</span> interval = 0;
+
+<span style="color: #e2661a;">float</span>[] q = <span style="color: #33997e;">new</span> <span style="color: #e2661a;">float</span>[4];
+Quaternion quat = <span style="color: #33997e;">new</span> Quaternion(1, 0, 0, 0);
+
+<span style="color: #e2661a;">float</span>[] gravity = <span style="color: #33997e;">new</span> <span style="color: #e2661a;">float</span>[3];
+<span style="color: #e2661a;">float</span>[] euler = <span style="color: #33997e;">new</span> <span style="color: #e2661a;">float</span>[3];
+<span style="color: #e2661a;">float</span>[] ypr = <span style="color: #33997e;">new</span> <span style="color: #e2661a;">float</span>[3];
+
+<span style="color: #33997e;">void</span> <span style="color: #006699;"><b>setup</b></span>() {
+    <span style="color: #666666;">// 300px square viewport using OpenGL rendering</span>
+    <span style="color: #006699;">size</span>(300, 300, OPENGL);
+    gfx = <span style="color: #33997e;">new</span> ToxiclibsSupport(<span style="color: #33997e;">this</span>);
+
+    <span style="color: #666666;">// setup lights and antialiasing</span>
+    <span style="color: #006699;">lights</span>();
+    <span style="color: #006699;">smooth</span>();
+  
+    <span style="color: #666666;">// display serial port list for debugging/clarity</span>
+    <span style="color: #006699;">println</span>(Serial.<span style="color: #006699;">list</span>());
+
+    <span style="color: #666666;">// get the first available port (use EITHER this OR the specific port code below)</span>
+    <span style="color: #e2661a;">String</span> portName = Serial.<span style="color: #006699;">list</span>()[0];
+    
+    <span style="color: #666666;">// get a specific serial port (use EITHER this OR the first-available code above)</span>
+    <span style="color: #666666;">//String portName = "COM4";</span>
+    
+    <span style="color: #666666;">// open the serial port</span>
+    port = <span style="color: #33997e;">new</span> Serial(<span style="color: #33997e;">this</span>, portName, 115200);
+    
+    <span style="color: #666666;">// send single character to trigger DMP init/start</span>
+    <span style="color: #666666;">// (expected by MPU6050_DMP6 example Arduino sketch)</span>
+    port.write(<span style="color: #7d4793;">'r'</span>);
+}
+
+<span style="color: #33997e;">void</span> <span style="color: #006699;"><b>draw</b></span>() {
+    <span style="color: #669900;">if</span> (<span style="color: #006699;">millis</span>() - interval &gt; 1000) {
+        <span style="color: #666666;">// resend single character to trigger DMP init/start</span>
+        <span style="color: #666666;">// in case the MPU is halted/reset while applet is running</span>
+        port.write(<span style="color: #7d4793;">'r'</span>);
+        interval = <span style="color: #006699;">millis</span>();
+    }
+    
+    <span style="color: #666666;">// black background</span>
+    <span style="color: #006699;">background</span>(0);
+    
+    <span style="color: #666666;">// translate everything to the middle of the viewport</span>
+    <span style="color: #006699;">pushMatrix</span>();
+    <span style="color: #006699;">translate</span>(<span style="color: #d94a7a;">width</span> / 2, <span style="color: #d94a7a;">height</span> / 2);
+
+    <span style="color: #666666;">// 3-step rotation from yaw/pitch/roll angles (gimbal lock!)</span>
+    <span style="color: #666666;">// ...and other weirdness I haven't figured out yet</span>
+    <span style="color: #666666;">//rotateY(-ypr[0]);</span>
+    <span style="color: #666666;">//rotateZ(-ypr[1]);</span>
+    <span style="color: #666666;">//rotateX(-ypr[2]);</span>
+
+    <span style="color: #666666;">// toxiclibs direct angle/axis rotation from quaternion (NO gimbal lock!)</span>
+    <span style="color: #666666;">// (axis order [1, 3, 2] and inversion [-1, +1, +1] is a consequence of</span>
+    <span style="color: #666666;">// different coordinate system orientation assumptions between Processing</span>
+    <span style="color: #666666;">// and InvenSense DMP)</span>
+    <span style="color: #e2661a;">float</span>[] axis = quat.toAxisAngle();
+    <span style="color: #006699;">rotate</span>(axis[0], -axis[1], axis[3], axis[2]);
+
+    <span style="color: #666666;">// draw main body in red</span>
+    <span style="color: #006699;">fill</span>(255, 0, 0, 200);
+    <span style="color: #006699;">box</span>(10, 10, 200);
+    
+    <span style="color: #666666;">// draw front-facing tip in blue</span>
+    <span style="color: #006699;">fill</span>(0, 0, 255, 200);
+    <span style="color: #006699;">pushMatrix</span>();
+    <span style="color: #006699;">translate</span>(0, 0, -120);
+    <span style="color: #006699;">rotateX</span>(<span style="color: #718a62;">PI</span>/2);
+    drawCylinder(0, 20, 20, 8);
+    <span style="color: #006699;">popMatrix</span>();
+    
+    <span style="color: #666666;">// draw wings and tail fin in green</span>
+    <span style="color: #006699;">fill</span>(0, 255, 0, 200);
+    <span style="color: #006699;">beginShape</span>(<span style="color: #718a62;">TRIANGLES</span>);
+    <span style="color: #006699;">vertex</span>(-100,  2, 30); <span style="color: #006699;">vertex</span>(0,  2, -80); <span style="color: #006699;">vertex</span>(100,  2, 30);  <span style="color: #666666;">// wing top layer</span>
+    <span style="color: #006699;">vertex</span>(-100, -2, 30); <span style="color: #006699;">vertex</span>(0, -2, -80); <span style="color: #006699;">vertex</span>(100, -2, 30);  <span style="color: #666666;">// wing bottom layer</span>
+    <span style="color: #006699;">vertex</span>(-2, 0, 98); <span style="color: #006699;">vertex</span>(-2, -30, 98); <span style="color: #006699;">vertex</span>(-2, 0, 70);  <span style="color: #666666;">// tail left layer</span>
+    <span style="color: #006699;">vertex</span>( 2, 0, 98); <span style="color: #006699;">vertex</span>( 2, -30, 98); <span style="color: #006699;">vertex</span>( 2, 0, 70);  <span style="color: #666666;">// tail right layer</span>
+    <span style="color: #006699;">endShape</span>();
+    <span style="color: #006699;">beginShape</span>(<span style="color: #718a62;">QUADS</span>);
+    <span style="color: #006699;">vertex</span>(-100, 2, 30); <span style="color: #006699;">vertex</span>(-100, -2, 30); <span style="color: #006699;">vertex</span>(  0, -2, -80); <span style="color: #006699;">vertex</span>(  0, 2, -80);
+    <span style="color: #006699;">vertex</span>( 100, 2, 30); <span style="color: #006699;">vertex</span>( 100, -2, 30); <span style="color: #006699;">vertex</span>(  0, -2, -80); <span style="color: #006699;">vertex</span>(  0, 2, -80);
+    <span style="color: #006699;">vertex</span>(-100, 2, 30); <span style="color: #006699;">vertex</span>(-100, -2, 30); <span style="color: #006699;">vertex</span>(100, -2,  30); <span style="color: #006699;">vertex</span>(100, 2,  30);
+    <span style="color: #006699;">vertex</span>(-2,   0, 98); <span style="color: #006699;">vertex</span>(2,   0, 98); <span style="color: #006699;">vertex</span>(2, -30, 98); <span style="color: #006699;">vertex</span>(-2, -30, 98);
+    <span style="color: #006699;">vertex</span>(-2,   0, 98); <span style="color: #006699;">vertex</span>(2,   0, 98); <span style="color: #006699;">vertex</span>(2,   0, 70); <span style="color: #006699;">vertex</span>(-2,   0, 70);
+    <span style="color: #006699;">vertex</span>(-2, -30, 98); <span style="color: #006699;">vertex</span>(2, -30, 98); <span style="color: #006699;">vertex</span>(2,   0, 70); <span style="color: #006699;">vertex</span>(-2,   0, 70);
+    <span style="color: #006699;">endShape</span>();
+    
+    <span style="color: #006699;">popMatrix</span>();
+}
+
+<span style="color: #33997e;">void</span> serialEvent(Serial port) {
+    interval = <span style="color: #006699;">millis</span>();
+    <span style="color: #669900;">while</span> (port.available() &gt; 0) {
+        <span style="color: #e2661a;">int</span> ch = port.read();
+
+        <span style="color: #669900;">if</span> (synced == 0 &amp;&amp; ch != <span style="color: #7d4793;">'$'</span>) <span style="color: #33997e;">return</span>;   <span style="color: #666666;">// initial synchronization - also used to resync/realign if needed</span>
+        synced = 1;
+        <span style="color: #006699;">print</span> ((<span style="color: #e2661a;">char</span>)ch);
+
+        <span style="color: #669900;">if</span> ((serialCount == 1 &amp;&amp; ch != 2)
+            || (serialCount == 12 &amp;&amp; ch != <span style="color: #7d4793;">'\r'</span>)
+            || (serialCount == 13 &amp;&amp; ch != <span style="color: #7d4793;">'\n'</span>))  {
+            serialCount = 0;
+            synced = 0;
+            <span style="color: #33997e;">return</span>;
+        }
+
+        <span style="color: #669900;">if</span> (serialCount &gt; 0 || ch == <span style="color: #7d4793;">'$'</span>) {
+            teapotPacket[serialCount++] = (<span style="color: #e2661a;">char</span>)ch;
+            <span style="color: #669900;">if</span> (serialCount == 14) {
+                serialCount = 0; <span style="color: #666666;">// restart packet byte position</span>
+                
+                <span style="color: #666666;">// get quaternion from data packet</span>
+                q[0] = ((teapotPacket[2] &lt;&lt; 8) | teapotPacket[3]) / 16384.0f;
+                q[1] = ((teapotPacket[4] &lt;&lt; 8) | teapotPacket[5]) / 16384.0f;
+                q[2] = ((teapotPacket[6] &lt;&lt; 8) | teapotPacket[7]) / 16384.0f;
+                q[3] = ((teapotPacket[8] &lt;&lt; 8) | teapotPacket[9]) / 16384.0f;
+                <span style="color: #669900;">for</span> (<span style="color: #e2661a;">int</span> i = 0; i &lt; 4; i++) <span style="color: #669900;">if</span> (q[i] &gt;= 2) q[i] = -4 + q[i];
+                
+                <span style="color: #666666;">// set our toxilibs quaternion to new data</span>
+                quat.<span style="color: #006699;">set</span>(q[0], q[1], q[2], q[3]);
+            
+            }
+        }
+    }
+}
+
+<span style="color: #33997e;">void</span> drawCylinder(<span style="color: #e2661a;">float</span> topRadius, <span style="color: #e2661a;">float</span> bottomRadius, <span style="color: #e2661a;">float</span> tall, <span style="color: #e2661a;">int</span> sides) {
+    <span style="color: #e2661a;">float</span> angle = 0;
+    <span style="color: #e2661a;">float</span> angleIncrement = <span style="color: #718a62;">TWO_PI</span> / sides;
+    <span style="color: #006699;">beginShape</span>(<span style="color: #718a62;">QUAD_STRIP</span>);
+    <span style="color: #669900;">for</span> (<span style="color: #e2661a;">int</span> i = 0; i &lt; sides + 1; ++i) {
+        <span style="color: #006699;">vertex</span>(topRadius*<span style="color: #006699;">cos</span>(angle), 0, topRadius*<span style="color: #006699;">sin</span>(angle));
+        <span style="color: #006699;">vertex</span>(bottomRadius*<span style="color: #006699;">cos</span>(angle), tall, bottomRadius*<span style="color: #006699;">sin</span>(angle));
+        angle += angleIncrement;
+    }
+    <span style="color: #006699;">endShape</span>();
+    
+    <span style="color: #666666;">// If it is not a cone, draw the circular top cap</span>
+    <span style="color: #669900;">if</span> (topRadius != 0) {
+        angle = 0;
+        <span style="color: #006699;">beginShape</span>(<span style="color: #718a62;">TRIANGLE_FAN</span>);
+        
+        <span style="color: #666666;">// Center point</span>
+        <span style="color: #006699;">vertex</span>(0, 0, 0);
+        <span style="color: #669900;">for</span> (<span style="color: #e2661a;">int</span> i = 0; i &lt; sides + 1; i++) {
+            <span style="color: #006699;">vertex</span>(topRadius * <span style="color: #006699;">cos</span>(angle), 0, topRadius * <span style="color: #006699;">sin</span>(angle));
+            angle += angleIncrement;
+        }
+        <span style="color: #006699;">endShape</span>();
+    }
+  
+    <span style="color: #666666;">// If it is not a cone, draw the circular bottom cap</span>
+    <span style="color: #669900;">if</span> (bottomRadius != 0) {
+        angle = 0;
+        <span style="color: #006699;">beginShape</span>(<span style="color: #718a62;">TRIANGLE_FAN</span>);
+    
+        <span style="color: #666666;">// Center point</span>
+        <span style="color: #006699;">vertex</span>(0, tall, 0);
+        <span style="color: #669900;">for</span> (<span style="color: #e2661a;">int</span> i = 0; i &lt; sides + 1; i++) {
+            <span style="color: #006699;">vertex</span>(bottomRadius * <span style="color: #006699;">cos</span>(angle), tall, bottomRadius * <span style="color: #006699;">sin</span>(angle));
+            angle += angleIncrement;
+        }
+        <span style="color: #006699;">endShape</span>();
+    }
+}
+
+</pre>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="acelermetro_y_giroscopio_mpu_6065.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="crditos.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>

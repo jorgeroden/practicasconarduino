@@ -1,0 +1,496 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Visualización de datos en la nube. Internet de las cosas. | Practicas con Arduino </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Jorge Muñoz, Jorge Luis Loza, Manuel Hidalgo, Pablo Evaristo García" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-140"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">Practicas con Arduino</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Prácticas con Arduino para 4º de ESO</a></li>
+   <li><a href="fundamentos_de_arduino.html" class="daddy">Fundamentos de Arduino</a>
+   <ul class="other-section">
+      <li><a href="informacin_bsica_sobre_arduino.html" class="no-ch">Información básica sobre Arduino</a></li>
+      <li><a href="hardware.html" class="daddy">Hardware</a>
+      <ul class="other-section">
+         <li><a href="alimentacin_elctrica_de_arduino.html" class="no-ch">Alimentación eléctrica de Arduino</a></li>
+      </ul>
+      </li>
+      <li><a href="entorno_de_programacin.html" class="no-ch">Entorno de programación</a></li>
+   </ul>
+   </li>
+   <li><a href="una_placa_de_apoyo_edubsica.html" class="no-ch">Una placa de apoyo: Edubásica</a></li>
+   <li><a href="montajes_bsicos_con_arduino.html" class="daddy">Montajes básicos con Arduino</a>
+   <ul class="other-section">
+      <li><a href="conexiones_digitales.html" class="daddy">Conexiones digitales</a>
+      <ul class="other-section">
+         <li><a href="resistencias_pullup_y_pulldown.html" class="no-ch">Resistencias pull-up y pull-down</a></li>
+         <li><a href="montaje_1_led_parpadeante.html" class="no-ch">Montaje 1: LED parpadeante</a></li>
+         <li><a href="montaje_2_semforo.html" class="no-ch">Montaje 2: Semáforo</a></li>
+         <li><a href="montaje_3_pulsador.html" class="no-ch">Montaje 3: Pulsador</a></li>
+      </ul>
+      </li>
+      <li><a href="conexiones_analgicas.html" class="no-ch">Conexiones analógicas</a></li>
+      <li><a href="un_caso_especial_seales_pwm.html" class="daddy">Un caso especial: Señales PWM</a>
+      <ul class="other-section">
+         <li><a href="control_de_la_intensidad_de_iluminacin_de_un_led.html" class="no-ch">Control de la intensidad de iluminación de un LED</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="electrnica_analgica.html" class="daddy">Electrónica analógica</a>
+   <ul class="other-section">
+      <li><a href="resistencias.html" class="daddy">Resistencias</a>
+      <ul class="other-section">
+         <li><a href="montaje_1_interruptor.html" class="no-ch">Montaje 1: Interruptor</a></li>
+         <li><a href="montaje_2_potencimetro.html" class="no-ch">Montaje 2: Potenciómetro</a></li>
+         <li><a href="montaje_3_resistencias_en_serie.html" class="no-ch">Montaje 3: Resistencias en serie</a></li>
+         <li><a href="montaje_4_resistencias_en_paralelo.html" class="no-ch">Montaje 4: Resistencias en paralelo.</a></li>
+         <li><a href="montaje_5_sensor_de_luz_ldr.html" class="daddy">Montaje 5: Sensor de luz (LDR)</a>
+         <ul class="other-section">
+            <li><a href="mapeo_de_valores.html" class="no-ch">Mapeo de valores</a></li>
+         </ul>
+         </li>
+         <li><a href="montaje_6_ldr_con_edubasica.html" class="no-ch">Montaje 6: LDR con Edubasica</a></li>
+      </ul>
+      </li>
+      <li><a href="diodos.html" class="daddy">Diodos</a>
+      <ul class="other-section">
+         <li><a href="regular_intesidad_de_un_led_con_edubasica.html" class="no-ch">Regular intesidad de un LED con Edubasica</a></li>
+         <li><a href="estudio_de_la_tensin_umbral_de_un_led.html" class="no-ch">Estudio de la tensión umbral de un LED</a></li>
+      </ul>
+      </li>
+      <li><a href="condensadores.html" class="no-ch">Condensadores</a></li>
+      <li><a href="transistores.html" class="daddy">Transistores</a>
+      <ul class="other-section">
+         <li><a href="recta_de_carga_de_un_transistor.html" class="no-ch">Recta de carga de un transistor</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="electrnica_digital.html" class="daddy">Electrónica digital</a>
+   <ul class="other-section">
+      <li><a href="lgebra_de_boole.html" class="no-ch">Álgebra de Boole</a></li>
+      <li><a href="montajes_bsicos_pulsador.html" class="no-ch">Montajes básicos: PULSADOR.</a></li>
+      <li><a href="montajes_bsicos_elevador.html" class="no-ch">Montajes básicos: ELEVADOR.</a></li>
+      <li><a href="montajes_bsicos_alarma_en_vivienda.html" class="no-ch">Montajes básicos: ALARMA EN VIVIENDA.</a></li>
+   </ul>
+   </li>
+   <li><a href="tecnologas_de_la_comunicacin.html" class="daddy">Tecnologías de la comunicación</a>
+   <ul class="other-section">
+      <li><a href="bluetooth_y_arduino.html" class="daddy">Bluetooth y Arduino</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="bluetooth_maestro.html" class="no-ch">Bluetooth maestro</a></li>
+      <li><a href="arduino_y_dispositivos_mviles.html" class="daddy">Arduino y dispositivos móviles</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas0.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa0.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades0.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="conexin_entre_dos_arduinos_por_cable.html" class="daddy">Conexión entre dos Arduinos por cable</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas1.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa1.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades1.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="control_y_robtica.html" class="daddy">Control y robótica</a>
+   <ul class="other-section">
+      <li><a href="sensor_de_infrarrojos_cny70.html" class="daddy">Sensor de infrarrojos CNY70</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas2.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa2.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades2.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="sensor_de_infrarrojos_sharp_gp2d12.html" class="daddy">Sensor de infrarrojos SHARP GP2D12</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas3.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa3.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades3.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="sensor_de_ultrasonidos.html" class="daddy">Sensor de ultrasonidos</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas4.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa4.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades4.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="control_de_servomotores.html" class="daddy">Control de servomotores</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas5.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa5.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades5.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="control_de_motores_dc.html" class="daddy">Control de motores DC</a>
+      <ul class="other-section">
+         <li><a href="montaje_con_transistor.html" class="daddy">Montaje con transistor</a>
+         <ul class="other-section">
+            <li><a href="descripcin_y_esquemas6.html" class="no-ch">Descripción y esquemas</a></li>
+            <li><a href="programa6.html" class="no-ch">Programa</a></li>
+            <li><a href="actividades6.html" class="no-ch">Actividades</a></li>
+         </ul>
+         </li>
+         <li><a href="montaje_con_circuito_l293.html" class="daddy">Montaje con Circuito L293</a>
+         <ul class="other-section">
+            <li><a href="descripcin_y_esquemas7.html" class="no-ch">Descripción y esquemas</a></li>
+            <li><a href="programa7.html" class="no-ch">Programa</a></li>
+            <li><a href="actividades7.html" class="no-ch">Actividades</a></li>
+         </ul>
+         </li>
+         <li><a href="accionamiento_con_edubsica.html" class="no-ch">Accionamiento con Edubásica</a></li>
+      </ul>
+      </li>
+      <li><a href="acelermetro.html" class="daddy">Acelerómetro</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas8.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa8.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades8.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_parking_con_barrera.html" class="daddy">Proyecto: Parking con barrera</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas9.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa9.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades9.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_tacmetro.html" class="daddy">Proyecto: Tacómetro</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas10.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa10.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades10.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_mquina_clasificadora_de_bolas.html" class="daddy">Proyecto: Máquina clasificadora de bolas</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas11.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa11.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades11.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="instalaciones.html" class="daddy">Instalaciones</a>
+   <ul class="other-section">
+      <li><a href="la_casa_inteligente.html" class="daddy">La casa inteligente</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas12.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa12.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades12.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="neumtica.html" class="daddy">Neumática</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas13.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa13.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades13.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="prcticas_rpidas_para_el_aula.html" class="current-page-parent daddy">Prácticas rápidas para el aula</a>
+   <ul>
+      <li><a href="led_parpadeante.html" class="no-ch">LED parpadeante</a></li>
+      <li><a href="secuencia_de_led.html" class="no-ch">Secuencia de LED</a></li>
+      <li><a href="detector_de_luz.html" class="no-ch">Detector de luz</a></li>
+      <li><a href="detector_de_objetos_por_infrarrojos_ir.html" class="no-ch">Detector de objetos por infrarrojos (IR).</a></li>
+      <li><a href="detector_de_objetos_por_ultrasonidos_us.html" class="no-ch">Detector de objetos por ultrasonidos (US).</a></li>
+      <li><a href="comunicacin_por_bluetooth.html" class="no-ch">Comunicación por Bluetooth.</a></li>
+      <li><a href="medida_de_la_temperatura_y_la_humedad_ambiente.html" class="no-ch">Medida de la temperatura y la humedad ambiente.</a></li>
+      <li><a href="representacin_grfica_de_medidas_con_processing.html" class="no-ch">Representación gráfica de medidas con Processing.</a></li>
+      <li id="active"><a href="visualizacin_de_datos_en_la_nube_internet_de_las_cosas.html" class="active no-ch">Visualización de datos en la nube. Internet de las cosas.</a></li>
+      <li><a href="uso_de_los_servomotores.html" class="no-ch">Uso de los servomotores.</a></li>
+      <li><a href="servos_de_rotacin_continua.html" class="no-ch">Servos de rotación continua.</a></li>
+      <li><a href="control_de_motores_dc0.html" class="daddy">Control de motores DC</a>
+      <ul class="other-section">
+         <li><a href="montaje_con_transistor0.html" class="no-ch">Montaje con transistor</a></li>
+         <li><a href="montaje_con_l293.html" class="no-ch">Montaje con L293</a></li>
+         <li><a href="shield_edubsica.html" class="no-ch">Shield Edubásica</a></li>
+      </ul>
+      </li>
+      <li><a href="acelermetro_y_giroscopio_mpu_6065.html" class="no-ch">Acelerómetro y giroscopio (MPU 6065).</a></li>
+      <li><a href="simulacin_con_giroscopio_mpu_6050.html" class="no-ch">Simulación con giroscopio (MPU 6050).</a></li>
+   </ul>
+   </li>
+   <li><a href="crditos.html" class="no-ch">Créditos</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="representacin_grfica_de_medidas_con_processing.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="uso_de_los_servomotores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Visualización de datos en la nube. Internet de las cosas.</h1></div>
+<div class="iDevice_wrapper textIdevice em_iDevice" id="id298">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header iDevice_header_noIcon"><h2 class="iDeviceTitle">Monitorizar los datos de temperatura y humedad obtenidos del sensor DHT11 en la nube.</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta298_298_2" class="block iDevice_content">
+<div class="exe-text"><p>Utilizaremos Arduino y un PC con Processing y conexión a internet para enviar los datos a la nube. No haremos el uso de WIFI ni de Shields para conectar Arduino a internet, los datos se enviarán al PC a través de la comunicación serie y desde éste a internet mediante un programa en Processing.</p>
+<p>Analizaremos dos proveedores de servicios IoT como son dweet.io y thingspeak.com</p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id275">
+<div class="iDevice emphasis0">
+<div id="ta275_85" class="block iDevice_content">
+<h2><strong>Dweet.io</strong></h2>
+<p>Para ello disponemos del portal web <em>dweet.io</em> que nos ofrece un servicio para enviar y representar datos en la nube sin necesidad, ni si quiera, de registrarnos en la plataforma.</p>
+<p>Vamos a ver los pasos a seguir:</p>
+<ol>
+<li>Probamos la plataforma introduciendo un dato, para ello en el navegador tecleamos por ejemplo (cambia jorgeroden por tu nombre): <a href="http://dweet.io/dweet/for/jorgeroden?temperatura=20">http://dweet.io/dweet/for/jorgeroden?temperatura=20</a><a href="http://dweet.io/dweet/for/jorgeroden?temperatura=20"></a></li>
+<li>Abre otra pestaña del navegador o utiliza un móvil para seguir el dato: <a href="http://dweet.io/follow/jorgeroden">http://dweet.io/follow/jorgeroden</a><a href="http://dweet.io/follow/jorgeroden"></a></li>
+<li>Prueba añadiendo otra variable, en este caso la humedad:<a href="http://dweet.io/dweet/for/jorgeroden?temperatura=20&amp;humedad=8">http://dweet.io/dweet/for/jorgeroden?temperatura=20&amp;humedad=8</a><a href="http://dweet.io/dweet/for/jorgeroden?temperatura=20&amp;humedad=80"></a></li>
+</ol>
+<p></p>
+<p>Automatizamos el proceso de recogida de datos desde Arduino con un programa en Processing, que enviará datos a través del navegador a dweet.io.</p>
+<p><strong>IMPORTANTE</strong>: No hay que tener abierto el monitor serie del IDE de Arduino porque ocupa el puerto y, por lo tanto, no deja leer los datos a Processing.</p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id276">
+<div class="iDevice emphasis0">
+<div id="ta276_85" class="block iDevice_content">
+<h3>PROGRAMA A CARGAR EN ARDUINO PARA DWEET.IO:</h3>
+<style type="text/css"><!--
+pre {
+margin: 0 0 1em 1em;
+padding: 1em 1em 1em 1em;
+border: 1px solid #C80000;
+font-family: Courier, Monospace;
+font-size: 1em;
+background-color: #F6F6E3;
+}
+--></style>
+<pre>#include <span style="color: #006699;">"DHT.h"</span>
+#define DHTPIN 2   
+#define DHTTYPE DHT11   <span style="color: #434f54;">// DHT 11 </span>
+DHT dht(DHTPIN, DHTTYPE);
+
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">setup</span>() {
+  <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">begin</span>(9600); 
+  dht.<span style="color: #d35400;">begin</span>();
+}
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">loop</span>() {
+
+  <span style="color: #d35400;">delay</span>(2000);
+  <span style="color: #00979c;">float</span> h = dht.readHumidity();
+  <span style="color: #00979c;">float</span> t = dht.<span style="color: #d35400;">readTemperature</span>();
+  <span style="color: #5e6d03;">if</span> (isnan(h) || isnan(t)) {
+    <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(<span style="color: #006699;">"Fallo al leer el sensor DHT11"</span>);
+    <span style="color: #5e6d03;">return</span>;
+  }
+<span style="color: #434f54;">// Únicamente enviar a Processing las variables t y h <br /><br /></span> 
+<span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>("Temperatura=");
+<span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>(t);
+<span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">print</span>("&amp;Humedad=");
+<span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(h);
+ 
+}
+
+
+</pre>
+<p></p>
+<h3>PROGRAMA A EJECUTAR EN PROCESSING (PC / LAPTOP) PARA DWEET:IO:</h3>
+<style type="text/css"><!--
+pre {
+margin: 0 0 1em 1em;
+padding: 1em 1em 1em 1em;
+border: 1px solid #C80000;
+font-family: Courier, Monospace;
+font-size: 1em;
+background-color: #F6F6E3;
+}
+--></style>
+<pre><span style="color: #33997e;">import</span> processing.serial.*;
+<span style="color: #666666;">//lf es el caracter de retorno de carro, que en ASCII es 10</span>
+<span style="color: #e2661a;">int</span> lf = 10;
+<span style="color: #666666;">// El puerto serie</span>
+Serial myPort;
+
+<span style="color: #33997e;">void</span> <span style="color: #006699;"><b>setup</b></span>() {
+  <span style="color: #666666;">// Lista todos los puertos serie</span>
+  <span style="color: #006699;">println</span>(Serial.<span style="color: #006699;">list</span>());
+  <span style="color: #666666;">// OJO: Elige el puerto donde tengas conectado Arduino.<br />  // Cambia el "0" de Serial.list()[0] por el orden que <br />  // tu puerto ocupe en la lista (0, 1, 2,...).<br /></span>  <span style="color: #666666;">// Si no lo tienes claro qué puerto ocupa Arduino mira<br />  // en el IDE Arduino en "Herramientas" mira el puerto que esté seleccionado.</span>
+  <span style="color: #666666;">//Fíjate que tenemos la velocidad del puerto a la misma que pusimos en Arduino</span>
+  myPort = <span style="color: #33997e;">new</span> Serial(<span style="color: #33997e;">this</span>, Serial.<span style="color: #006699;">list</span>()[0], 9600);
+}
+<span style="color: #33997e;">void</span> <span style="color: #006699;"><b>draw</b></span>() {
+  <span style="color: #669900;">while</span> (myPort.available() &gt; 0) {
+    
+    <span style="color: #e2661a;">String</span> lectura = myPort.readStringUntil(lf);
+    <span style="color: #669900;">if</span> (lectura != <span style="color: #33997e;">null</span>) {
+      <span style="color: #006699;">println</span>(lectura);
+      <span style="color: #666666;">//IMPORTANTE! cambia jorgeroden por tu nombre o lo que utilizases anteriormente</span>
+      <span style="color: #006699;">loadStrings</span>(<span style="color: #7d4793;">"https://dweet.io/dweet/for/jorgeroden?"</span>+lectura);
+     
+    }
+  
+  }
+}
+
+
+</pre>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id295">
+<div class="iDevice emphasis0">
+<div id="ta295_85" class="block iDevice_content">
+<h3>REPRESENTACIÓN DE DATOS EN EL NAVEGADOR:</h3>
+<p><strong>Dweet.io</strong> nos ofrecerá los datos de la siguiente manera:</p>
+<p><img src="dweetio-jorgeroden-2.png" width="500" height="344" alt="dweet" title="dweet" /></p>
+<p></p>
+<p style="text-align: justify;">Si queremos algo más vistoso podemos utilizar diferentes servicios de monitorización online.</p>
+<p style="text-align: justify;"><strong>Freeboard.io</strong></p>
+<p style="text-align: justify;"><a href="http://www.freeboard.io">freeboard.io</a> aunque en este caso nos tendremos que registrar en la web. Podemos tener un plan gratuito con 30 días de duración.</p>
+<p style="text-align: justify;">Una vez registrados podemos crear paneles indicadores configurados a nuestro gusto para visualizar la información. Primero habrá que añadir como fuente de datos Dweet.io y nuestro nombre utilizado allí (jorgeroden en el ejemplo).</p>
+<p style="text-align: justify;">Después creamos un panel indicando que la fuente de datos que queremos utilizar y la variable en cuestión a visualizar. </p>
+<p style="text-align: justify;"><img src="freeb-1.png" width="500" height="254" alt="freeboard-1" title="freeboard-1" /></p>
+<p>¡Y  este puede ser el resultado!</p>
+<p></p>
+<p><img src="freeb-2.png" width="500" height="415" alt="freeboard-2" title="freeboard-2" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice" id="id297">
+<div class="iDevice emphasis0" >
+<div id="ta297_297_2" class="block iDevice_content">
+
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper textIdevice em_iDevice" id="id299">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header iDevice_header_noIcon"><h2 class="iDeviceTitle">Thingspeak.com</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta299_299_2" class="block iDevice_content">
+<div class="exe-text"><p>Thingspeak.com es un proveedor de servicios IoT creado por MathWorks (Matlab) para monitorizar y analizar datos online. Si nos registramos podremos disponer de una cuenta gratuita (con un número limitado de muestras) con la que poder visualizar nuestros datos online.</p>
+<p>El primer paso para trabajar con esta plataforma será crearse una cuenta. Para ello necesitaremos un email para verificar la cuenta y elegir una contraseña segura.</p>
+<p>Una vez obtenida la cuenta dispondremos de un canal con un identificador único (ID) que podremos configurar para poder subir nuestros datos a internet.</p>
+<p>Para configurar el canal deberemos activar el número de campos que vamos a utilizar, uno por medida tal y como se observa en la figura. En nuestro caso vamos a monitorizar los datos de temperatura y humedad que obtendremos de un sensor DHT11 conectado a Arduino.</p>
+<p><img src="ChannelSettings.png" alt="Channel settings" title="Configuración del canal" width="610" height="463" /></p>
+<p>Otra de las opciones que deberemos activar es la de compartir, para que nuestro canal sea público y los datos accesibles desde cualquier dispositivo.</p>
+<p><img src="shareChannel.png" alt="Share" title="Share" width="610" height="350" /></p>
+<p>Por último, en la opción API Keys, tendremos las claves para poder enviar datos al servidor de Thingspeak. Se trata de una cadena alfanumérica que deberemos utilizar en nuestro programa de Processing para enviar las medidas al canal.</p>
+<p>Finalmente tendremos el canal configurado y preparado para recibir nuestros datos desde Arduino.</p>
+<h3>PROGRAMA A CARGAR EN ARDUINO PARA THINGSPEAK.COM :</h3>
+<pre><span style="color: #5e6d03;">#include</span> <span style="color: #005c5f;">"DHT.h"</span>
+<span style="color: #5e6d03;">#define</span> <span style="color: #000000;">DHTPIN</span> <span style="color: #000000;">2</span>   
+<span style="color: #5e6d03;">#define</span> <span style="color: #000000;">DHTTYPE</span> <span style="color: #000000;">DHT11</span>   <span style="color: #434f54;">// DHT 11 </span>
+<b><span style="color: #d35400;">DHT</span></b> <span style="color: #000000;">dht</span><span style="color: #000000;">(</span><span style="color: #000000;">DHTPIN</span><span style="color: #434f54;">,</span> <span style="color: #000000;">DHTTYPE</span><span style="color: #000000;">)</span><span style="color: #000000;">;</span>
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">setup</span><span style="color: #000000;">(</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span>
+  <b><span style="color: #d35400;">Serial</span></b><span style="color: #434f54;">.</span><span style="color: #d35400;">begin</span><span style="color: #000000;">(</span><span style="color: #000000;">9600</span><span style="color: #000000;">)</span><span style="color: #000000;">;</span> 
+  <span style="color: #000000;">dht</span><span style="color: #434f54;">.</span><span style="color: #d35400;">begin</span><span style="color: #000000;">(</span><span style="color: #000000;">)</span><span style="color: #000000;">;</span>
+  
+<span style="color: #000000;">}</span>
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">loop</span><span style="color: #000000;">(</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span>
+   
+  <span style="color: #00979c;">int</span> <span style="color: #000000;">h</span> <span style="color: #434f54;">=</span> <span style="color: #000000;">dht</span><span style="color: #434f54;">.</span><span style="color: #d35400;">readHumidity</span><span style="color: #000000;">(</span><span style="color: #000000;">)</span><span style="color: #000000;">;</span>
+  <span style="color: #00979c;">int</span> <span style="color: #000000;">t</span> <span style="color: #434f54;">=</span> <span style="color: #000000;">dht</span><span style="color: #434f54;">.</span><span style="color: #d35400;">readTemperature</span><span style="color: #000000;">(</span><span style="color: #000000;">)</span><span style="color: #000000;">;</span>
+  <span style="color: #5e6d03;">if</span> <span style="color: #000000;">(</span><span style="color: #d35400;">isnan</span><span style="color: #000000;">(</span><span style="color: #000000;">h</span><span style="color: #000000;">)</span> <span style="color: #434f54;">||</span> <span style="color: #d35400;">isnan</span><span style="color: #000000;">(</span><span style="color: #000000;">t</span><span style="color: #000000;">)</span><span style="color: #000000;">)</span> <span style="color: #000000;">{</span>
+    <b><span style="color: #d35400;">Serial</span></b><span style="color: #434f54;">.</span><span style="color: #d35400;">println</span><span style="color: #000000;">(</span><span style="color: #005c5f;">"Fallo al leer el sensor DHT11"</span><span style="color: #000000;">)</span><span style="color: #000000;">;</span>
+    <span style="color: #5e6d03;">return</span><span style="color: #000000;">;</span>
+  <span style="color: #000000;">}</span>
+<span style="color: #434f54;">// enviar las variables h y t</span>
+ <b><span style="color: #d35400;">Serial</span></b><span style="color: #434f54;">.</span><span style="color: #d35400;">print</span><span style="color: #000000;">(</span><span style="color: #000000;">h</span><span style="color: #000000;">)</span><span style="color: #000000;">;</span>
+ <b><span style="color: #d35400;">Serial</span></b><span style="color: #434f54;">.</span><span style="color: #d35400;">println</span><span style="color: #000000;">(</span><span style="color: #000000;">t</span><span style="color: #000000;">)</span><span style="color: #000000;">;</span>
+ <span style="color: #d35400;">delay</span><span style="color: #000000;">(</span><span style="color: #000000;">10000</span><span style="color: #000000;">)</span><span style="color: #000000;">;</span> <span style="color: #434f54;">//5 segundos de retardo</span>
+<span style="color: #000000;">}<br /><br /></span></pre>
+<h3>PROGRAMA A EJECUTAR EN PROCESSING PARA THINGSPEAK.COM :</h3>
+<pre><span style="color: #33997e;">import</span> processing.serial.*;
+<span style="color: #666666;">//lf es el caracter de retorno de carro, que en ASCII es 10</span>
+<span style="color: #e2661a;">int</span> lf = 10;
+ 
+
+<span style="color: #666666;">// El puerto serie</span>
+Serial myPort;
+
+<span style="color: #33997e;">void</span> <span style="color: #006699;"><b>setup</b></span>() {
+  <span style="color: #666666;">// Lista todos los puertos serie</span>
+  <span style="color: #006699;">println</span>(Serial.<span style="color: #006699;">list</span>());
+  <span style="color: #666666;">// OJO: Elige el puerto donde tengas conectado Arduino.</span>
+  <span style="color: #666666;">// Cambia el "0" de Serial.list()[0] por el orden que </span>
+  <span style="color: #666666;">// tu puerto ocupe en la lista (0, 1, 2,...).</span>
+  <span style="color: #666666;">// Si no lo tienes claro qué puerto ocupa Arduino mira</span>
+  <span style="color: #666666;">// en el IDE Arduino en "Herramientas" mira el puerto que esté seleccionado.</span>
+  <span style="color: #666666;">// Fíjate que la velocidad del puerto es la misma que pusimos en Arduino</span>
+  myPort = <span style="color: #33997e;">new</span> Serial(<span style="color: #33997e;">this</span>, Serial.<span style="color: #006699;">list</span>()[1], 9600);
+}
+<span style="color: #33997e;">void</span> <span style="color: #006699;"><b>draw</b></span>() {
+  
+  <span style="color: #669900;">while</span> (myPort.available() &gt; 0) {
+    
+    <span style="color: #e2661a;">String</span> data = myPort.readStringUntil(lf);
+    
+    <span style="color: #669900;">if</span> (data != <span style="color: #33997e;">null</span>) {
+      <span style="color: #e2661a;">String</span> data1 = data.<span style="color: #006699;">substring</span>(0,2);
+      <span style="color: #e2661a;">String</span> data2 = data.<span style="color: #006699;">substring</span>(2,4);
+      <span style="color: #e2661a;">int</span> tem = <span style="color: #006699;">int</span>(data2);
+      <span style="color: #e2661a;">int</span> hum = <span style="color: #006699;">int</span>(data1);
+
+      <span style="color: #006699;">println</span>(hum);
+      <span style="color: #006699;">println</span>(tem);
+     
+        <span style="color: #666666;">//IMPORTANTE! cambia api_key por la de tu canal</span>
+       <span style="color: #006699;">loadStrings</span>(<span style="color: #7d4793;">"https://api.thingspeak.com/update?api_key=poner-aqui-write-api-key&amp;field2="</span> + hum + <span style="color: #7d4793;">"&amp;field1="</span> + tem);
+       
+     }
+    }
+  
+  }
+<span style="color: #666666;">//}</span>
+</pre>
+<p>Finalmente podremos visualizar los datos en el navegador de internet poniendo la URL de nuestro canal:</p>
+<p><strong>https://thingspeak.com/channels/-poner-aqui-el-ID-del-canal</strong></p>
+<p>También existe una app para dispositivos móviles con Android o IOS (ver Google Play o App Store) para obtener gráficas para visualización de datos.</p>
+<p><img src="graficas.png" alt="Graficas-thingspeak" title="Graficas-thingspeak" width="917" height="308" /></p></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="representacin_grfica_de_medidas_con_processing.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="uso_de_los_servomotores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
