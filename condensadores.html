@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Condensadores | Practicas con Arduino </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Jorge Muñoz, Jorge Luis Loza, Manuel Hidalgo, Pablo Evaristo García" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-100"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">Practicas con Arduino</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Prácticas con Arduino para 4º de ESO</a></li>
+   <li><a href="fundamentos_de_arduino.html" class="daddy">Fundamentos de Arduino</a>
+   <ul class="other-section">
+      <li><a href="informacin_bsica_sobre_arduino.html" class="no-ch">Información básica sobre Arduino</a></li>
+      <li><a href="hardware.html" class="daddy">Hardware</a>
+      <ul class="other-section">
+         <li><a href="alimentacin_elctrica_de_arduino.html" class="no-ch">Alimentación eléctrica de Arduino</a></li>
+      </ul>
+      </li>
+      <li><a href="entorno_de_programacin.html" class="no-ch">Entorno de programación</a></li>
+   </ul>
+   </li>
+   <li><a href="una_placa_de_apoyo_edubsica.html" class="no-ch">Una placa de apoyo: Edubásica</a></li>
+   <li><a href="montajes_bsicos_con_arduino.html" class="daddy">Montajes básicos con Arduino</a>
+   <ul class="other-section">
+      <li><a href="conexiones_digitales.html" class="daddy">Conexiones digitales</a>
+      <ul class="other-section">
+         <li><a href="resistencias_pullup_y_pulldown.html" class="no-ch">Resistencias pull-up y pull-down</a></li>
+         <li><a href="montaje_1_led_parpadeante.html" class="no-ch">Montaje 1: LED parpadeante</a></li>
+         <li><a href="montaje_2_semforo.html" class="no-ch">Montaje 2: Semáforo</a></li>
+         <li><a href="montaje_3_pulsador.html" class="no-ch">Montaje 3: Pulsador</a></li>
+      </ul>
+      </li>
+      <li><a href="conexiones_analgicas.html" class="no-ch">Conexiones analógicas</a></li>
+      <li><a href="un_caso_especial_seales_pwm.html" class="daddy">Un caso especial: Señales PWM</a>
+      <ul class="other-section">
+         <li><a href="control_de_la_intensidad_de_iluminacin_de_un_led.html" class="no-ch">Control de la intensidad de iluminación de un LED</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="electrnica_analgica.html" class="current-page-parent daddy">Electrónica analógica</a>
+   <ul>
+      <li><a href="resistencias.html" class="daddy">Resistencias</a>
+      <ul class="other-section">
+         <li><a href="montaje_1_interruptor.html" class="no-ch">Montaje 1: Interruptor</a></li>
+         <li><a href="montaje_2_potencimetro.html" class="no-ch">Montaje 2: Potenciómetro</a></li>
+         <li><a href="montaje_3_resistencias_en_serie.html" class="no-ch">Montaje 3: Resistencias en serie</a></li>
+         <li><a href="montaje_4_resistencias_en_paralelo.html" class="no-ch">Montaje 4: Resistencias en paralelo.</a></li>
+         <li><a href="montaje_5_sensor_de_luz_ldr.html" class="daddy">Montaje 5: Sensor de luz (LDR)</a>
+         <ul class="other-section">
+            <li><a href="mapeo_de_valores.html" class="no-ch">Mapeo de valores</a></li>
+         </ul>
+         </li>
+         <li><a href="montaje_6_ldr_con_edubasica.html" class="no-ch">Montaje 6: LDR con Edubasica</a></li>
+      </ul>
+      </li>
+      <li><a href="diodos.html" class="daddy">Diodos</a>
+      <ul class="other-section">
+         <li><a href="regular_intesidad_de_un_led_con_edubasica.html" class="no-ch">Regular intesidad de un LED con Edubasica</a></li>
+         <li><a href="estudio_de_la_tensin_umbral_de_un_led.html" class="no-ch">Estudio de la tensión umbral de un LED</a></li>
+      </ul>
+      </li>
+      <li id="active"><a href="condensadores.html" class="active no-ch">Condensadores</a></li>
+      <li><a href="transistores.html" class="daddy">Transistores</a>
+      <ul class="other-section">
+         <li><a href="recta_de_carga_de_un_transistor.html" class="no-ch">Recta de carga de un transistor</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="electrnica_digital.html" class="daddy">Electrónica digital</a>
+   <ul class="other-section">
+      <li><a href="lgebra_de_boole.html" class="no-ch">Álgebra de Boole</a></li>
+      <li><a href="montajes_bsicos_pulsador.html" class="no-ch">Montajes básicos: PULSADOR.</a></li>
+      <li><a href="montajes_bsicos_elevador.html" class="no-ch">Montajes básicos: ELEVADOR.</a></li>
+      <li><a href="montajes_bsicos_alarma_en_vivienda.html" class="no-ch">Montajes básicos: ALARMA EN VIVIENDA.</a></li>
+   </ul>
+   </li>
+   <li><a href="tecnologas_de_la_comunicacin.html" class="daddy">Tecnologías de la comunicación</a>
+   <ul class="other-section">
+      <li><a href="bluetooth_y_arduino.html" class="daddy">Bluetooth y Arduino</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="bluetooth_maestro.html" class="no-ch">Bluetooth maestro</a></li>
+      <li><a href="arduino_y_dispositivos_mviles.html" class="daddy">Arduino y dispositivos móviles</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas0.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa0.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades0.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="conexin_entre_dos_arduinos_por_cable.html" class="daddy">Conexión entre dos Arduinos por cable</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas1.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa1.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades1.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="control_y_robtica.html" class="daddy">Control y robótica</a>
+   <ul class="other-section">
+      <li><a href="sensor_de_infrarrojos_cny70.html" class="daddy">Sensor de infrarrojos CNY70</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas2.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa2.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades2.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="sensor_de_infrarrojos_sharp_gp2d12.html" class="daddy">Sensor de infrarrojos SHARP GP2D12</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas3.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa3.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades3.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="sensor_de_ultrasonidos.html" class="daddy">Sensor de ultrasonidos</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas4.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa4.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades4.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="control_de_servomotores.html" class="daddy">Control de servomotores</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas5.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa5.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades5.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="control_de_motores_dc.html" class="daddy">Control de motores DC</a>
+      <ul class="other-section">
+         <li><a href="montaje_con_transistor.html" class="daddy">Montaje con transistor</a>
+         <ul class="other-section">
+            <li><a href="descripcin_y_esquemas6.html" class="no-ch">Descripción y esquemas</a></li>
+            <li><a href="programa6.html" class="no-ch">Programa</a></li>
+            <li><a href="actividades6.html" class="no-ch">Actividades</a></li>
+         </ul>
+         </li>
+         <li><a href="montaje_con_circuito_l293.html" class="daddy">Montaje con Circuito L293</a>
+         <ul class="other-section">
+            <li><a href="descripcin_y_esquemas7.html" class="no-ch">Descripción y esquemas</a></li>
+            <li><a href="programa7.html" class="no-ch">Programa</a></li>
+            <li><a href="actividades7.html" class="no-ch">Actividades</a></li>
+         </ul>
+         </li>
+         <li><a href="accionamiento_con_edubsica.html" class="no-ch">Accionamiento con Edubásica</a></li>
+      </ul>
+      </li>
+      <li><a href="acelermetro.html" class="daddy">Acelerómetro</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas8.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa8.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades8.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_parking_con_barrera.html" class="daddy">Proyecto: Parking con barrera</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas9.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa9.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades9.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_tacmetro.html" class="daddy">Proyecto: Tacómetro</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas10.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa10.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades10.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_mquina_clasificadora_de_bolas.html" class="daddy">Proyecto: Máquina clasificadora de bolas</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas11.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa11.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades11.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="instalaciones.html" class="daddy">Instalaciones</a>
+   <ul class="other-section">
+      <li><a href="la_casa_inteligente.html" class="daddy">La casa inteligente</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas12.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa12.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades12.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="neumtica.html" class="daddy">Neumática</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas13.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa13.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades13.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="prcticas_rpidas_para_el_aula.html" class="daddy">Prácticas rápidas para el aula</a>
+   <ul class="other-section">
+      <li><a href="led_parpadeante.html" class="no-ch">LED parpadeante</a></li>
+      <li><a href="secuencia_de_led.html" class="no-ch">Secuencia de LED</a></li>
+      <li><a href="detector_de_luz.html" class="no-ch">Detector de luz</a></li>
+      <li><a href="detector_de_objetos_por_infrarrojos_ir.html" class="no-ch">Detector de objetos por infrarrojos (IR).</a></li>
+      <li><a href="detector_de_objetos_por_ultrasonidos_us.html" class="no-ch">Detector de objetos por ultrasonidos (US).</a></li>
+      <li><a href="comunicacin_por_bluetooth.html" class="no-ch">Comunicación por Bluetooth.</a></li>
+      <li><a href="medida_de_la_temperatura_y_la_humedad_ambiente.html" class="no-ch">Medida de la temperatura y la humedad ambiente.</a></li>
+      <li><a href="representacin_grfica_de_medidas_con_processing.html" class="no-ch">Representación gráfica de medidas con Processing.</a></li>
+      <li><a href="visualizacin_de_datos_en_la_nube_internet_de_las_cosas.html" class="no-ch">Visualización de datos en la nube. Internet de las cosas.</a></li>
+      <li><a href="uso_de_los_servomotores.html" class="no-ch">Uso de los servomotores.</a></li>
+      <li><a href="servos_de_rotacin_continua.html" class="no-ch">Servos de rotación continua.</a></li>
+      <li><a href="control_de_motores_dc0.html" class="daddy">Control de motores DC</a>
+      <ul class="other-section">
+         <li><a href="montaje_con_transistor0.html" class="no-ch">Montaje con transistor</a></li>
+         <li><a href="montaje_con_l293.html" class="no-ch">Montaje con L293</a></li>
+         <li><a href="shield_edubsica.html" class="no-ch">Shield Edubásica</a></li>
+      </ul>
+      </li>
+      <li><a href="acelermetro_y_giroscopio_mpu_6065.html" class="no-ch">Acelerómetro y giroscopio (MPU 6065).</a></li>
+      <li><a href="simulacin_con_giroscopio_mpu_6050.html" class="no-ch">Simulación con giroscopio (MPU 6050).</a></li>
+   </ul>
+   </li>
+   <li><a href="crditos.html" class="no-ch">Créditos</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="estudio_de_la_tensin_umbral_de_un_led.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="transistores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Condensadores</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id193">
+<div class="iDevice emphasis0">
+<div id="ta193_85" class="block iDevice_content">
+<p><img src="Captura_de_pantalla_2015-05-25_a_las_12.08.02.png" width="600" height="284" alt="condensadores" title="condensadores" /></p>
+<p></p>
+<p>Dos conductores cualesquiera separados por un aislante constituye un condensador. Este tipo de dispositivos eléctricos tienen gran variedad de usos como filtrar señales, eliminar ruido eléctrico o almacenar carga eléctrica entre otros.</p>
+<p>En casi todas las aplicaciones prácticas cada conductor se encuentra inicialmente descargado y al conectarlos a una batería, mediante transferencia de carga de la batería a los conductores, van adquiriendo una cierta carga (dicho proceso se denomina carga del condensador). En todo momento, ambos conductores tienen igual carga pero de signo opuesto de tal forma que entre ambos conductores existe un campo eléctrico y por tanto una diferencia de potencial que se opone a la externa responsable de su carga. El proceso de carga del condensador se detiene <span style="font-size: 0.82em; line-height: 1.5;"><span style="font-size: small;">cuando la diferencia de potencial entre los conductores del mismo se iguala a la de la batería.</span> </span></p>
+<p>Hay que resaltar que aunque cada placa se encuentra cargada, la carga neta del condensador sigue siendo nula, puesto que la carga de cada conductor es igual a la del otro pero con signo contrario. Es por ello que cuando se dice que un conductor tiene una carga Q realmente lo que se está diciendo es que tiene una carga +Q en el conductor que se encuentra a mayor potencial y una carga – Q en el conductor a menor potencial (supuesto Q positiva).</p>
+<p><b>Montaje: Descarga de un condensador</b></p>
+<p>Haz el siguiente montaje sobre la protoboard. Como fuente de alimentación puedes usar los 5V que te ofrece la placa EduBasica a través de sus clemas.</p>
+<p><img src="Captura_de_pantalla_2015-05-25_a_las_12.10.31.png" width="400" height="293" alt="esquema-condensador" title="esquema-condensador" /></p>
+<p><span style="font-size: small; line-height: 1.5;">Con el conmutador cerrado el condensador se carga, teniendo una tensión de 5V, y la lectura en la entrada A5 es de 5V y en el monitor serie de 1023. El led en esta situación está encendido. </span></p>
+<p>Al abrir el conmutador empieza el proceso de descarga del condensador a través del led y la resistencia. El tiempo de descarga es entre 3 y 5 veces la constante de tiempo (R·C, en segundos), en este caso entre 30 y 50 segundos. En el monitor serie podemos ver como disminuye el valor debido a la descarga del condensador y al mismo tiempo se observa que el diodo led se apaga.</p>
+<p>Carga el siguiente programa:</p>
+<style type="text/css"><!--
+pre {
+margin: 0 0 1em 1em;
+padding: 1em 1em 1em 1em;
+border: 1px solid #C80000;
+font-family: Courier, Monospace;
+font-size: 1em;
+background-color: #F6F6E3;
+}
+--></style>
+<pre><span style="color: #00979c;">int</span> sensorPin = A5;    
+<span style="color: #00979c;">int</span> sensorValue = 0;  
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">setup</span>() {
+ 
+  <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">begin</span>(9600);  
+}
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">loop</span>() {
+  sensorValue = <span style="color: #d35400;">analogRead</span>(sensorPin);    
+  <span style="color: #d35400;"><b>Serial</b></span>.<span style="color: #d35400;">println</span>(sensorValue);
+  <span style="color: #d35400;">delay</span>(100);  
+}
+
+
+</pre>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper TrueFalseIdevice em_iDevice em_iDevice_question" id="id222">
+<div class="iDevice emphasis1" >
+<div class="iDevice_header"><h2 class="iDeviceTitle">Pregunta Verdadero-Falso</h2></div>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta222_100" class="block iDevice_content">
+
+</div>
+<div class="question">
+<form name="true-false-form-0b222" action="#" class="activity-form">
+<h3 class="js-sr-av">Pregunta 1</h3>
+<div id="taquestion0b222" class="block iDevice_content">
+<p>Un condensador es un dispositivo que almacena carga eléctrica.</p>
+</div>
+<p class="iDevice_answer js-required">
+<label for="true0b222"><input type="radio" name="option0b222" id="true0b222" class="exe-radio-option exe-radio-option-0-2-0b222-truefalse" /> Verdadero</label> 
+<label for="false0b222"><input type="radio" name="option0b222" id="false0b222" class="exe-radio-option exe-radio-option-1-2-0b222-truefalse" /> Falso</label>
+</p>
+</form>
+<div id="s0b222" class="feedback js-feedback js-hidden">
+<h4 class="js-sr-av">Retroalimentación</h4>
+<p><strong id="s0b222-result" class="right">Verdadero</strong></p>
+
+</div>
+</div>
+<div class="question">
+<form name="true-false-form-1b222" action="#" class="activity-form">
+<h3 class="js-sr-av">Pregunta 2</h3>
+<div id="taquestion1b222" class="block iDevice_content">
+<p>Las placas de un condensador están en contacto unas con otras sin nada que las separe.</p>
+</div>
+<p class="iDevice_answer js-required">
+<label for="true1b222"><input type="radio" name="option1b222" id="true1b222" class="exe-radio-option exe-radio-option-0-2-1b222-truefalse" /> Verdadero</label> 
+<label for="false1b222"><input type="radio" name="option1b222" id="false1b222" class="exe-radio-option exe-radio-option-1-2-1b222-truefalse" /> Falso</label>
+</p>
+</form>
+<div id="s1b222" class="feedback js-feedback js-hidden">
+<h4 class="js-sr-av">Retroalimentación</h4>
+<p><strong id="s1b222-result" class="wrong">Falso</strong></p>
+<p>Un condensador está formado por dos conductores separados por un material aislante.</p>
+</div>
+</div>
+<div class="question">
+<form name="true-false-form-2b222" action="#" class="activity-form">
+<h3 class="js-sr-av">Pregunta 3</h3>
+<div id="taquestion2b222" class="block iDevice_content">
+<p>En el programa anterior se observa que el condensador se descarga sobre un pin digital de Arduino.</p>
+</div>
+<p class="iDevice_answer js-required">
+<label for="true2b222"><input type="radio" name="option2b222" id="true2b222" class="exe-radio-option exe-radio-option-0-2-2b222-truefalse" /> Verdadero</label> 
+<label for="false2b222"><input type="radio" name="option2b222" id="false2b222" class="exe-radio-option exe-radio-option-1-2-2b222-truefalse" /> Falso</label>
+</p>
+</form>
+<div id="s2b222" class="feedback js-feedback js-hidden">
+<h4 class="js-sr-av">Retroalimentación</h4>
+<p><strong id="s2b222-result" class="wrong">Falso</strong></p>
+<p><span style="font-size: small;">En la línea</span>  <em style="font-size: small;"><span style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; line-height: 1.5;">sensorValue = </span><span style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; line-height: 1.5;">analogRead</span></em><span><em style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small; line-height: 1.5;">(sensorPin</em><span color="#000000" face="Verdana, Arial, Helvetica, sans-serif" size="2" style="color: #000000; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: small;"><span style="line-height: 1.5;">); vemos </span>que la lectura es analógica, por lo tanto, uno de los contactos del condensador está conectado a un pin analógico (A5) y no a un pin digital.<span style="line-height: 1.5;"><br /></span></span></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="estudio_de_la_tensin_umbral_de_un_led.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="transistores.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
