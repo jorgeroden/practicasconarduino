@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Accionamiento con Edubásica | Practicas con Arduino </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Jorge Muñoz, Jorge Luis Loza, Manuel Hidalgo, Pablo Evaristo García" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-130"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">Practicas con Arduino</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Prácticas con Arduino para 4º de ESO</a></li>
+   <li><a href="fundamentos_de_arduino.html" class="daddy">Fundamentos de Arduino</a>
+   <ul class="other-section">
+      <li><a href="informacin_bsica_sobre_arduino.html" class="no-ch">Información básica sobre Arduino</a></li>
+      <li><a href="hardware.html" class="daddy">Hardware</a>
+      <ul class="other-section">
+         <li><a href="alimentacin_elctrica_de_arduino.html" class="no-ch">Alimentación eléctrica de Arduino</a></li>
+      </ul>
+      </li>
+      <li><a href="entorno_de_programacin.html" class="no-ch">Entorno de programación</a></li>
+   </ul>
+   </li>
+   <li><a href="una_placa_de_apoyo_edubsica.html" class="no-ch">Una placa de apoyo: Edubásica</a></li>
+   <li><a href="montajes_bsicos_con_arduino.html" class="daddy">Montajes básicos con Arduino</a>
+   <ul class="other-section">
+      <li><a href="conexiones_digitales.html" class="daddy">Conexiones digitales</a>
+      <ul class="other-section">
+         <li><a href="resistencias_pullup_y_pulldown.html" class="no-ch">Resistencias pull-up y pull-down</a></li>
+         <li><a href="montaje_1_led_parpadeante.html" class="no-ch">Montaje 1: LED parpadeante</a></li>
+         <li><a href="montaje_2_semforo.html" class="no-ch">Montaje 2: Semáforo</a></li>
+         <li><a href="montaje_3_pulsador.html" class="no-ch">Montaje 3: Pulsador</a></li>
+      </ul>
+      </li>
+      <li><a href="conexiones_analgicas.html" class="no-ch">Conexiones analógicas</a></li>
+      <li><a href="un_caso_especial_seales_pwm.html" class="daddy">Un caso especial: Señales PWM</a>
+      <ul class="other-section">
+         <li><a href="control_de_la_intensidad_de_iluminacin_de_un_led.html" class="no-ch">Control de la intensidad de iluminación de un LED</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="electrnica_analgica.html" class="daddy">Electrónica analógica</a>
+   <ul class="other-section">
+      <li><a href="resistencias.html" class="daddy">Resistencias</a>
+      <ul class="other-section">
+         <li><a href="montaje_1_interruptor.html" class="no-ch">Montaje 1: Interruptor</a></li>
+         <li><a href="montaje_2_potencimetro.html" class="no-ch">Montaje 2: Potenciómetro</a></li>
+         <li><a href="montaje_3_resistencias_en_serie.html" class="no-ch">Montaje 3: Resistencias en serie</a></li>
+         <li><a href="montaje_4_resistencias_en_paralelo.html" class="no-ch">Montaje 4: Resistencias en paralelo.</a></li>
+         <li><a href="montaje_5_sensor_de_luz_ldr.html" class="daddy">Montaje 5: Sensor de luz (LDR)</a>
+         <ul class="other-section">
+            <li><a href="mapeo_de_valores.html" class="no-ch">Mapeo de valores</a></li>
+         </ul>
+         </li>
+         <li><a href="montaje_6_ldr_con_edubasica.html" class="no-ch">Montaje 6: LDR con Edubasica</a></li>
+      </ul>
+      </li>
+      <li><a href="diodos.html" class="daddy">Diodos</a>
+      <ul class="other-section">
+         <li><a href="regular_intesidad_de_un_led_con_edubasica.html" class="no-ch">Regular intesidad de un LED con Edubasica</a></li>
+         <li><a href="estudio_de_la_tensin_umbral_de_un_led.html" class="no-ch">Estudio de la tensión umbral de un LED</a></li>
+      </ul>
+      </li>
+      <li><a href="condensadores.html" class="no-ch">Condensadores</a></li>
+      <li><a href="transistores.html" class="daddy">Transistores</a>
+      <ul class="other-section">
+         <li><a href="recta_de_carga_de_un_transistor.html" class="no-ch">Recta de carga de un transistor</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="electrnica_digital.html" class="daddy">Electrónica digital</a>
+   <ul class="other-section">
+      <li><a href="lgebra_de_boole.html" class="no-ch">Álgebra de Boole</a></li>
+      <li><a href="montajes_bsicos_pulsador.html" class="no-ch">Montajes básicos: PULSADOR.</a></li>
+      <li><a href="montajes_bsicos_elevador.html" class="no-ch">Montajes básicos: ELEVADOR.</a></li>
+      <li><a href="montajes_bsicos_alarma_en_vivienda.html" class="no-ch">Montajes básicos: ALARMA EN VIVIENDA.</a></li>
+   </ul>
+   </li>
+   <li><a href="tecnologas_de_la_comunicacin.html" class="daddy">Tecnologías de la comunicación</a>
+   <ul class="other-section">
+      <li><a href="bluetooth_y_arduino.html" class="daddy">Bluetooth y Arduino</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="bluetooth_maestro.html" class="no-ch">Bluetooth maestro</a></li>
+      <li><a href="arduino_y_dispositivos_mviles.html" class="daddy">Arduino y dispositivos móviles</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas0.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa0.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades0.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="conexin_entre_dos_arduinos_por_cable.html" class="daddy">Conexión entre dos Arduinos por cable</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas1.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa1.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades1.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li class="current-page-parent"><a href="control_y_robtica.html" class="current-page-parent daddy">Control y robótica</a>
+   <ul>
+      <li><a href="sensor_de_infrarrojos_cny70.html" class="daddy">Sensor de infrarrojos CNY70</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas2.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa2.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades2.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="sensor_de_infrarrojos_sharp_gp2d12.html" class="daddy">Sensor de infrarrojos SHARP GP2D12</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas3.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa3.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades3.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="sensor_de_ultrasonidos.html" class="daddy">Sensor de ultrasonidos</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas4.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa4.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades4.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="control_de_servomotores.html" class="daddy">Control de servomotores</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas5.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa5.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades5.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li class="current-page-parent"><a href="control_de_motores_dc.html" class="current-page-parent daddy">Control de motores DC</a>
+      <ul>
+         <li><a href="montaje_con_transistor.html" class="daddy">Montaje con transistor</a>
+         <ul class="other-section">
+            <li><a href="descripcin_y_esquemas6.html" class="no-ch">Descripción y esquemas</a></li>
+            <li><a href="programa6.html" class="no-ch">Programa</a></li>
+            <li><a href="actividades6.html" class="no-ch">Actividades</a></li>
+         </ul>
+         </li>
+         <li><a href="montaje_con_circuito_l293.html" class="daddy">Montaje con Circuito L293</a>
+         <ul class="other-section">
+            <li><a href="descripcin_y_esquemas7.html" class="no-ch">Descripción y esquemas</a></li>
+            <li><a href="programa7.html" class="no-ch">Programa</a></li>
+            <li><a href="actividades7.html" class="no-ch">Actividades</a></li>
+         </ul>
+         </li>
+         <li id="active"><a href="accionamiento_con_edubsica.html" class="active no-ch">Accionamiento con Edubásica</a></li>
+      </ul>
+      </li>
+      <li><a href="acelermetro.html" class="daddy">Acelerómetro</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas8.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa8.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades8.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_parking_con_barrera.html" class="daddy">Proyecto: Parking con barrera</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas9.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa9.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades9.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_tacmetro.html" class="daddy">Proyecto: Tacómetro</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas10.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa10.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades10.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_mquina_clasificadora_de_bolas.html" class="daddy">Proyecto: Máquina clasificadora de bolas</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas11.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa11.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades11.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="instalaciones.html" class="daddy">Instalaciones</a>
+   <ul class="other-section">
+      <li><a href="la_casa_inteligente.html" class="daddy">La casa inteligente</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas12.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa12.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades12.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="neumtica.html" class="daddy">Neumática</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas13.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa13.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades13.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="prcticas_rpidas_para_el_aula.html" class="daddy">Prácticas rápidas para el aula</a>
+   <ul class="other-section">
+      <li><a href="led_parpadeante.html" class="no-ch">LED parpadeante</a></li>
+      <li><a href="secuencia_de_led.html" class="no-ch">Secuencia de LED</a></li>
+      <li><a href="detector_de_luz.html" class="no-ch">Detector de luz</a></li>
+      <li><a href="detector_de_objetos_por_infrarrojos_ir.html" class="no-ch">Detector de objetos por infrarrojos (IR).</a></li>
+      <li><a href="detector_de_objetos_por_ultrasonidos_us.html" class="no-ch">Detector de objetos por ultrasonidos (US).</a></li>
+      <li><a href="comunicacin_por_bluetooth.html" class="no-ch">Comunicación por Bluetooth.</a></li>
+      <li><a href="medida_de_la_temperatura_y_la_humedad_ambiente.html" class="no-ch">Medida de la temperatura y la humedad ambiente.</a></li>
+      <li><a href="representacin_grfica_de_medidas_con_processing.html" class="no-ch">Representación gráfica de medidas con Processing.</a></li>
+      <li><a href="visualizacin_de_datos_en_la_nube_internet_de_las_cosas.html" class="no-ch">Visualización de datos en la nube. Internet de las cosas.</a></li>
+      <li><a href="uso_de_los_servomotores.html" class="no-ch">Uso de los servomotores.</a></li>
+      <li><a href="servos_de_rotacin_continua.html" class="no-ch">Servos de rotación continua.</a></li>
+      <li><a href="control_de_motores_dc0.html" class="daddy">Control de motores DC</a>
+      <ul class="other-section">
+         <li><a href="montaje_con_transistor0.html" class="no-ch">Montaje con transistor</a></li>
+         <li><a href="montaje_con_l293.html" class="no-ch">Montaje con L293</a></li>
+         <li><a href="shield_edubsica.html" class="no-ch">Shield Edubásica</a></li>
+      </ul>
+      </li>
+      <li><a href="acelermetro_y_giroscopio_mpu_6065.html" class="no-ch">Acelerómetro y giroscopio (MPU 6065).</a></li>
+      <li><a href="simulacin_con_giroscopio_mpu_6050.html" class="no-ch">Simulación con giroscopio (MPU 6050).</a></li>
+   </ul>
+   </li>
+   <li><a href="crditos.html" class="no-ch">Créditos</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="actividades7.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="acelermetro.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Accionamiento con Edubásica</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id244">
+<div class="iDevice emphasis0">
+<div id="ta244_85" class="block iDevice_content">
+<p style="text-align: justify;">Edubásica es una tarjeta diseñada para facilitar la tarea en el aula. Elimina gran parte de cableado y conexiones en la placa de pruebas lo que evita muchos errores en las prácticas. </p>
+<p style="text-align: justify;">En esta placa disponemos de las dos opciones vistas anteriormente. Edubásica lleva montados, entre otros componentes, un circuito integrado L293 y un transistor. Por lo tanto podemos activar motores usando ambas opciones, aunque lo recomendable es utilizar el L293 que permite el <span style="text-decoration: underline;">cambio de sentido de giro y regular la velocidad</span> actuando con una señal PWM sobre los dos pines de habilitación (dependiendo de la hoja de datos viene como ENABLE o CHIP INHIBIT)  del circuito L293. Los pines de Arduino que pueden regular la velocidad por PWM correspondientes a esas patillas de habilitación serán: D10 para el motor A y D11 para el motor B.</p>
+<p style="text-align: justify;"><span style="font-size: small;"><span style="line-height: 1.5;">Para hacer funcionar dos motores DC con Edubásica sólo tenemos que conectar en las clemas indicadas (serigrafiados en la placa como Motor A y Motor B) los dos cables de cada motor. Según se observa en la imagen, tenemos 4 conexiones para los dos motores. Desde Arduino y con la </span></span><span style="font-size: 0.82em; line-height: 1.5;"><a href="descripcin_y_esquemas7.html"><span style="font-size: small;">tabla de verdad</span></a> </span><span style="font-size: small;"><span style="line-height: 1.5;">del CI L293 indicada en la sección anterior,  podemos regular el sentido de giro y velocidad </span><span style="line-height: 1.5;">de cada motor.</span></span></p>
+<p style="text-align: justify;"><span style="font-size: small; line-height: 1.5;">Edubásica lleva un interruptor que permite tomar el voltaje de la salida Vin de Arduino (alimentación externa), necesaria para dar la corriente suficiente para accionar los motores. Cuando el piloto Vin está encendido significa que la alimentación de Edubásica viene de Vin de Arduino, o bien, directamente desde una fuente externa conectada a la clema Vin de Edubásica de la regleta de alimentación (en la imagen la regleta de la parte inferior).</span></p>
+<p style="text-align: justify;"><span style="font-size: small; line-height: 1.5;">Conectando los dos terminales del motor a la clema del transistor de Edubásica, también podríamos hacerlo funcionar enviando un nivel HIGH al pin digital 6 de Arduino.  Este pin (D6) está conectado directamente a la base del transistor de Edubásica. La desventaja respecto al CI L293 es que, en este caso, no podríamos cambiar el sentido de giro.</span></p>
+<p><img src="Edubasica-L293.png" width="500" height="478" alt="edu-l293" title="edu-l293" /></p>
+<p>Vamos a ver dos programas de test distintos que hacen funcionar ambos motores  (A y B)  mediante el circuito L293 de Edubasica:</p>
+<p><span style="text-decoration: underline;">MOTOR A</span></p>
+<style type="text/css"><!--
+pre {
+margin: 0 0 1em 1em;
+padding: 1em 1em 1em 1em;
+border: 1px solid #C80000;
+font-family: Courier, Monospace;
+font-size: 1em;
+background-color: #F6F6E3;
+}
+--></style>
+<pre><span style="color: #434f54;">/*</span>
+<span style="color: #434f54;">  Test del motor A controlado un puente en H</span>
+<span style="color: #434f54;">  del C.I. L293D</span>
+<span style="color: #434f54;">  Comprueba el funcionamiento del motor A  </span>
+<span style="color: #434f54;">  EL INTERRUPTOR DE CORRIENTE DE EDUBASICA <br />  TIENE QUE ESTAR EN POSICION ON</span>
+<br /><span style="color: #434f54;">  Sketch Test for motorA controlled <br />  by L239D H bridge (600mA)</span>
+<span style="color: #434f54;">  THE POWER SWITCH PROVIDEED ON EDUBASICA <br />  MUST TO BE ON </span>
+<span style="color: #434f54;">  </span>
+<span style="color: #434f54;">  Manuel Hidalgo - LeoBot  Julio 2014</span>
+<span style="color: #434f54;">  Pablo Garcia - May 2015</span>
+<span style="color: #434f54;">*/</span>
+
+
+<span style="color: #434f54;">//Etiquetas de identificación de los pines <br />// labels for pins</span>
+<span style="color: #434f54;">//pines para controlar la direccion de giro <br />// with 2 pins we control de spinning direction</span>
+<span style="color: #00979c;">const</span> <span style="color: #00979c;">int</span> motorA_Dir1 = 8;        
+<span style="color: #00979c;">const</span> <span style="color: #00979c;">int</span> motorA_Dir2 = 9;
+<span style="color: #00979c;">const</span> <span style="color: #00979c;">int</span> motorA_Velocidad = 10;  <br /><br /><span style="color: #434f54;">//salida PWM para controlar la velocidad <br />// PWM for speed</span>
+
+<span style="color: #434f54;">//Variables</span>
+<span style="color: #00979c;">int</span> vPWM = 155;    <span style="color: #434f54;">//valor de la velocidad en PWM<br /> // PWM speed</span>
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">setup</span>(){
+  <span style="color: #434f54;">//configuracion de los pines //pins setup</span>
+  <span style="color: #d35400;">pinMode</span>(motorA_Dir1, <span style="color: #00979c;">OUTPUT</span>);
+  <span style="color: #d35400;">pinMode</span>(motorA_Dir2, <span style="color: #00979c;">OUTPUT</span>);
+  
+}
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">loop</span>(){
+  forward();
+  <span style="color: #d35400;">delay</span>(4000);              
+  <span style="color: #d35400;">stop</span>();
+  <span style="color: #d35400;">delay</span>(2000);
+  backw();
+  <span style="color: #d35400;">delay</span>(4000); 
+  <span style="color: #d35400;">stop</span>();
+  <span style="color: #d35400;">delay</span>(2000);  
+}
+
+<span style="color: #00979c;">void</span> forward(){
+    <span style="color: #434f54;">//Activamos el motor A en un sentido de giro</span>
+  <span style="color: #434f54;">//spinning direction 1 (high-low)</span>
+  <span style="color: #d35400;">digitalWrite</span>(motorA_Dir1,<span style="color: #00979c;">HIGH</span>);
+  <span style="color: #d35400;">digitalWrite</span>(motorA_Dir2,<span style="color: #00979c;">LOW</span>); 
+  <span style="color: #d35400;">analogWrite</span>(motorA_Velocidad,vPWM);
+}
+   
+<span style="color: #00979c;">void</span> backw(){
+  <span style="color: #434f54;">//Activamos el motor A en un sentido de giro</span>
+  <span style="color: #434f54;">//spinning direction 1 (high-low)</span>
+  <span style="color: #d35400;">digitalWrite</span>(motorA_Dir1,<span style="color: #00979c;">LOW</span>);
+  <span style="color: #d35400;">digitalWrite</span>(motorA_Dir2,<span style="color: #00979c;">HIGH</span>); 
+  <span style="color: #d35400;">analogWrite</span>(motorA_Velocidad,vPWM);
+}
+
+<span style="color: #00979c;">void</span> <span style="color: #d35400;">stop</span>(){
+ <span style="color: #434f54;">//Paramos el motor durante 2s //stop for 2 secs</span>
+ <span style="color: #434f54;">//STOP (low, low)</span>
+  <span style="color: #d35400;">digitalWrite</span>(motorA_Dir1,<span style="color: #00979c;">LOW</span>);
+  <span style="color: #d35400;">digitalWrite</span>(motorA_Dir2,<span style="color: #00979c;">LOW</span>);
+}
+
+
+</pre>
+<p><span style="text-decoration: underline;">MOTOR B</span></p>
+<p></p>
+<style type="text/css"><!--
+pre {
+margin: 0 0 1em 1em;
+padding: 1em 1em 1em 1em;
+border: 1px solid #C80000;
+font-family: Courier, Monospace;
+font-size: 1em;
+background-color: #F6F6E3;
+}
+--></style>
+<pre><span style="color: #434f54;">/*</span>
+<span style="color: #434f54;">  Test del motor B controlado un puente en H</span>
+<span style="color: #434f54;">  del C.I. L293D</span>
+<span style="color: #434f54;">  Comprueba el funcionamiento del motor B  </span>
+<span style="color: #434f54;">  Manuel Hidalgo - LeoBot</span>
+<span style="color: #434f54;">  Julio 2014</span>
+<span style="color: #434f54;">*/</span>
+
+<span style="color: #434f54;">//Etiquetas de identificación de los pines</span>
+<span style="color: #00979c;">const</span> <span style="color: #00979c;">int</span> motorB_Dir1 = 12;        <br /><span style="color: #434f54;">//pines para controlar la direccion de giro</span>
+<span style="color: #00979c;">const</span> <span style="color: #00979c;">int</span> motorB_Dir2 = 13;
+<span style="color: #00979c;">const</span> <span style="color: #00979c;">int</span> motorB_Velocidad = 11;  <br /><span style="color: #434f54;">//salida PWM para controlar la velocidad</span>
+
+<span style="color: #434f54;">//Variables</span>
+<span style="color: #00979c;">int</span> vPWM = 155;    <span style="color: #434f54;">//valor de la velocidad en PWM</span>
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">setup</span>(){
+  <span style="color: #434f54;">//configuracion de los pines</span>
+  <span style="color: #d35400;">pinMode</span>(motorB_Dir1, <span style="color: #00979c;">OUTPUT</span>);
+  <span style="color: #d35400;">pinMode</span>(motorB_Dir2, <span style="color: #00979c;">OUTPUT</span>);
+  
+}
+
+<span style="color: #00979c;">void</span> <span style="color: #5e6d03;">loop</span>(){
+  <span style="color: #434f54;">//Activamos el motor B en un sentido de giro</span>
+  <span style="color: #d35400;">digitalWrite</span>(motorB_Dir1,<span style="color: #00979c;">HIGH</span>);
+  <span style="color: #d35400;">digitalWrite</span>(motorB_Dir2,<span style="color: #00979c;">LOW</span>); 
+  <span style="color: #d35400;">analogWrite</span>(motorB_Velocidad,vPWM);
+  <span style="color: #d35400;">delay</span>(5000);                <span style="color: #434f54;">//permanece activado 5s</span>
+  
+  <span style="color: #434f54;">//Paramos el motor durante 2 segundo</span>
+  <span style="color: #d35400;">digitalWrite</span>(motorB_Dir1,<span style="color: #00979c;">LOW</span>);
+  <span style="color: #d35400;">digitalWrite</span>(motorB_Dir2,<span style="color: #00979c;">LOW</span>);
+  <span style="color: #d35400;">delay</span>(2000);
+  
+  <span style="color: #434f54;">//Activamos el motor B en un sentido de giro</span>
+  <span style="color: #d35400;">digitalWrite</span>(motorB_Dir1,<span style="color: #00979c;">LOW</span>);
+  <span style="color: #d35400;">digitalWrite</span>(motorB_Dir2,<span style="color: #00979c;">HIGH</span>); 
+  <span style="color: #d35400;">analogWrite</span>(motorB_Velocidad,vPWM);
+  <span style="color: #d35400;">delay</span>(5000);                <span style="color: #434f54;">//permanece activado 5s</span>
+  
+  <span style="color: #434f54;">//Paramos el motor durante 1 segundo</span>
+  <span style="color: #d35400;">digitalWrite</span>(motorB_Dir1,<span style="color: #00979c;">LOW</span>);
+  <span style="color: #d35400;">digitalWrite</span>(motorB_Dir2,<span style="color: #00979c;">LOW</span>);
+  <span style="color: #d35400;">delay</span>(2000);
+}
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="actividades7.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="acelermetro.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
