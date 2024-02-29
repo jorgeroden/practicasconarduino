@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="es" xml:lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Hardware | Practicas con Arduino </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="es" />
+<meta name="author" content="Jorge Muñoz, Jorge Luis Loza, Manuel Hidalgo, Pablo Evaristo García" />
+<meta name="generator" content="eXeLearning 2.7 - exelearning.net" />
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-87"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<div id="header" ><div id="headerContent">Practicas con Arduino</div></div>
+<div id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Prácticas con Arduino para 4º de ESO</a></li>
+   <li class="current-page-parent"><a href="fundamentos_de_arduino.html" class="current-page-parent daddy">Fundamentos de Arduino</a>
+   <ul>
+      <li><a href="informacin_bsica_sobre_arduino.html" class="no-ch">Información básica sobre Arduino</a></li>
+      <li id="active"><a href="hardware.html" class="active daddy">Hardware</a>
+      <ul>
+         <li><a href="alimentacin_elctrica_de_arduino.html" class="no-ch">Alimentación eléctrica de Arduino</a></li>
+      </ul>
+      </li>
+      <li><a href="entorno_de_programacin.html" class="no-ch">Entorno de programación</a></li>
+   </ul>
+   </li>
+   <li><a href="una_placa_de_apoyo_edubsica.html" class="no-ch">Una placa de apoyo: Edubásica</a></li>
+   <li><a href="montajes_bsicos_con_arduino.html" class="daddy">Montajes básicos con Arduino</a>
+   <ul class="other-section">
+      <li><a href="conexiones_digitales.html" class="daddy">Conexiones digitales</a>
+      <ul class="other-section">
+         <li><a href="resistencias_pullup_y_pulldown.html" class="no-ch">Resistencias pull-up y pull-down</a></li>
+         <li><a href="montaje_1_led_parpadeante.html" class="no-ch">Montaje 1: LED parpadeante</a></li>
+         <li><a href="montaje_2_semforo.html" class="no-ch">Montaje 2: Semáforo</a></li>
+         <li><a href="montaje_3_pulsador.html" class="no-ch">Montaje 3: Pulsador</a></li>
+      </ul>
+      </li>
+      <li><a href="conexiones_analgicas.html" class="no-ch">Conexiones analógicas</a></li>
+      <li><a href="un_caso_especial_seales_pwm.html" class="daddy">Un caso especial: Señales PWM</a>
+      <ul class="other-section">
+         <li><a href="control_de_la_intensidad_de_iluminacin_de_un_led.html" class="no-ch">Control de la intensidad de iluminación de un LED</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="electrnica_analgica.html" class="daddy">Electrónica analógica</a>
+   <ul class="other-section">
+      <li><a href="resistencias.html" class="daddy">Resistencias</a>
+      <ul class="other-section">
+         <li><a href="montaje_1_interruptor.html" class="no-ch">Montaje 1: Interruptor</a></li>
+         <li><a href="montaje_2_potencimetro.html" class="no-ch">Montaje 2: Potenciómetro</a></li>
+         <li><a href="montaje_3_resistencias_en_serie.html" class="no-ch">Montaje 3: Resistencias en serie</a></li>
+         <li><a href="montaje_4_resistencias_en_paralelo.html" class="no-ch">Montaje 4: Resistencias en paralelo.</a></li>
+         <li><a href="montaje_5_sensor_de_luz_ldr.html" class="daddy">Montaje 5: Sensor de luz (LDR)</a>
+         <ul class="other-section">
+            <li><a href="mapeo_de_valores.html" class="no-ch">Mapeo de valores</a></li>
+         </ul>
+         </li>
+         <li><a href="montaje_6_ldr_con_edubasica.html" class="no-ch">Montaje 6: LDR con Edubasica</a></li>
+      </ul>
+      </li>
+      <li><a href="diodos.html" class="daddy">Diodos</a>
+      <ul class="other-section">
+         <li><a href="regular_intesidad_de_un_led_con_edubasica.html" class="no-ch">Regular intesidad de un LED con Edubasica</a></li>
+         <li><a href="estudio_de_la_tensin_umbral_de_un_led.html" class="no-ch">Estudio de la tensión umbral de un LED</a></li>
+      </ul>
+      </li>
+      <li><a href="condensadores.html" class="no-ch">Condensadores</a></li>
+      <li><a href="transistores.html" class="daddy">Transistores</a>
+      <ul class="other-section">
+         <li><a href="recta_de_carga_de_un_transistor.html" class="no-ch">Recta de carga de un transistor</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="electrnica_digital.html" class="daddy">Electrónica digital</a>
+   <ul class="other-section">
+      <li><a href="lgebra_de_boole.html" class="no-ch">Álgebra de Boole</a></li>
+      <li><a href="montajes_bsicos_pulsador.html" class="no-ch">Montajes básicos: PULSADOR.</a></li>
+      <li><a href="montajes_bsicos_elevador.html" class="no-ch">Montajes básicos: ELEVADOR.</a></li>
+      <li><a href="montajes_bsicos_alarma_en_vivienda.html" class="no-ch">Montajes básicos: ALARMA EN VIVIENDA.</a></li>
+   </ul>
+   </li>
+   <li><a href="tecnologas_de_la_comunicacin.html" class="daddy">Tecnologías de la comunicación</a>
+   <ul class="other-section">
+      <li><a href="bluetooth_y_arduino.html" class="daddy">Bluetooth y Arduino</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="bluetooth_maestro.html" class="no-ch">Bluetooth maestro</a></li>
+      <li><a href="arduino_y_dispositivos_mviles.html" class="daddy">Arduino y dispositivos móviles</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas0.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa0.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades0.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="conexin_entre_dos_arduinos_por_cable.html" class="daddy">Conexión entre dos Arduinos por cable</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas1.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa1.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades1.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="control_y_robtica.html" class="daddy">Control y robótica</a>
+   <ul class="other-section">
+      <li><a href="sensor_de_infrarrojos_cny70.html" class="daddy">Sensor de infrarrojos CNY70</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas2.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa2.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades2.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="sensor_de_infrarrojos_sharp_gp2d12.html" class="daddy">Sensor de infrarrojos SHARP GP2D12</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas3.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa3.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades3.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="sensor_de_ultrasonidos.html" class="daddy">Sensor de ultrasonidos</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas4.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa4.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades4.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="control_de_servomotores.html" class="daddy">Control de servomotores</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas5.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa5.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades5.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="control_de_motores_dc.html" class="daddy">Control de motores DC</a>
+      <ul class="other-section">
+         <li><a href="montaje_con_transistor.html" class="daddy">Montaje con transistor</a>
+         <ul class="other-section">
+            <li><a href="descripcin_y_esquemas6.html" class="no-ch">Descripción y esquemas</a></li>
+            <li><a href="programa6.html" class="no-ch">Programa</a></li>
+            <li><a href="actividades6.html" class="no-ch">Actividades</a></li>
+         </ul>
+         </li>
+         <li><a href="montaje_con_circuito_l293.html" class="daddy">Montaje con Circuito L293</a>
+         <ul class="other-section">
+            <li><a href="descripcin_y_esquemas7.html" class="no-ch">Descripción y esquemas</a></li>
+            <li><a href="programa7.html" class="no-ch">Programa</a></li>
+            <li><a href="actividades7.html" class="no-ch">Actividades</a></li>
+         </ul>
+         </li>
+         <li><a href="accionamiento_con_edubsica.html" class="no-ch">Accionamiento con Edubásica</a></li>
+      </ul>
+      </li>
+      <li><a href="acelermetro.html" class="daddy">Acelerómetro</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas8.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa8.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades8.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_parking_con_barrera.html" class="daddy">Proyecto: Parking con barrera</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas9.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa9.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades9.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_tacmetro.html" class="daddy">Proyecto: Tacómetro</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas10.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa10.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades10.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="proyecto_mquina_clasificadora_de_bolas.html" class="daddy">Proyecto: Máquina clasificadora de bolas</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas11.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa11.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades11.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="instalaciones.html" class="daddy">Instalaciones</a>
+   <ul class="other-section">
+      <li><a href="la_casa_inteligente.html" class="daddy">La casa inteligente</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas12.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa12.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades12.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+      <li><a href="neumtica.html" class="daddy">Neumática</a>
+      <ul class="other-section">
+         <li><a href="descripcin_y_esquemas13.html" class="no-ch">Descripción y esquemas</a></li>
+         <li><a href="programa13.html" class="no-ch">Programa</a></li>
+         <li><a href="actividades13.html" class="no-ch">Actividades</a></li>
+      </ul>
+      </li>
+   </ul>
+   </li>
+   <li><a href="prcticas_rpidas_para_el_aula.html" class="daddy">Prácticas rápidas para el aula</a>
+   <ul class="other-section">
+      <li><a href="led_parpadeante.html" class="no-ch">LED parpadeante</a></li>
+      <li><a href="secuencia_de_led.html" class="no-ch">Secuencia de LED</a></li>
+      <li><a href="detector_de_luz.html" class="no-ch">Detector de luz</a></li>
+      <li><a href="detector_de_objetos_por_infrarrojos_ir.html" class="no-ch">Detector de objetos por infrarrojos (IR).</a></li>
+      <li><a href="detector_de_objetos_por_ultrasonidos_us.html" class="no-ch">Detector de objetos por ultrasonidos (US).</a></li>
+      <li><a href="comunicacin_por_bluetooth.html" class="no-ch">Comunicación por Bluetooth.</a></li>
+      <li><a href="medida_de_la_temperatura_y_la_humedad_ambiente.html" class="no-ch">Medida de la temperatura y la humedad ambiente.</a></li>
+      <li><a href="representacin_grfica_de_medidas_con_processing.html" class="no-ch">Representación gráfica de medidas con Processing.</a></li>
+      <li><a href="visualizacin_de_datos_en_la_nube_internet_de_las_cosas.html" class="no-ch">Visualización de datos en la nube. Internet de las cosas.</a></li>
+      <li><a href="uso_de_los_servomotores.html" class="no-ch">Uso de los servomotores.</a></li>
+      <li><a href="servos_de_rotacin_continua.html" class="no-ch">Servos de rotación continua.</a></li>
+      <li><a href="control_de_motores_dc0.html" class="daddy">Control de motores DC</a>
+      <ul class="other-section">
+         <li><a href="montaje_con_transistor0.html" class="no-ch">Montaje con transistor</a></li>
+         <li><a href="montaje_con_l293.html" class="no-ch">Montaje con L293</a></li>
+         <li><a href="shield_edubsica.html" class="no-ch">Shield Edubásica</a></li>
+      </ul>
+      </li>
+      <li><a href="acelermetro_y_giroscopio_mpu_6065.html" class="no-ch">Acelerómetro y giroscopio (MPU 6065).</a></li>
+      <li><a href="simulacin_con_giroscopio_mpu_6050.html" class="no-ch">Simulación con giroscopio (MPU 6050).</a></li>
+   </ul>
+   </li>
+   <li><a href="crditos.html" class="no-ch">Créditos</a></li>
+</ul>
+</div>
+<div id='topPagination'>
+<div class="pagination noprt">
+<a href="informacin_bsica_sobre_arduino.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="alimentacin_elctrica_de_arduino.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+<div id="main-wrapper">
+<div id="main"><a name="main"></a>
+<div id="nodeDecoration"><h1 id="nodeTitle">Hardware</h1></div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id142">
+<div class="iDevice emphasis0">
+<div id="ta142_85" class="block iDevice_content">
+<h3>Placa Arduino</h3>
+<p>Arduino puede tomar información del entorno a través de sus pines de entrada de toda una gama de sensores y puede afectar aquello que le rodea controlando luces, motores y otros actuadores. El microcontrolador en la placa Arduino se programa mediante el lenguaje de programación Arduino (basado en Wiring) y el entorno de desarrollo Arduino (basado en Processing).</p>
+<h3><span style="font-size: medium;"> <span style="line-height: 1.5;">Entradas y salidas</span></span></h3>
+<p>La placa Arduino Duemilanove o UNO consta de:</p>
+<p>14 entradas digitales configurables Entrada/Salidas que operan a 5 ó 0 voltios. Cada pin puede proporcionar o recibir como máximo 40 mA. </p>
+<p>Los pines 3, 5, 6, 8, 10 y 11 pueden proporcionar una salida PWM (Pulse Width Modulation). Si se conecta cualquier dispositivo a los pines 0 y 1, eso interferirá con la comunicación USB. </p>
+<p>6 entradas analógicas con una resolución de 10 bits que proporcionan un número entero de 0 a 1023. Por defecto miden de 0 voltios (masa) hasta 5 voltios.</p>
+<h3>Pines de la placa</h3>
+<p>Elementos con los que podemos interactuar: (tomando como ejemplo la placa USB). Empezando en el sentido de las agujas del reloj desde el centro de la parte superior:</p>
+<p><img src="Captura_de_pantalla_2015-04-06_a_las_12.02.37.png" width="500" height="367" alt="pinesArduino" title="pinesArduino" style="margin-left: 20px; margin-right: 20px; float: left;" /></p>
+<ul>
+<li>Pin de referencia analógica (naranja).</li>
+<li>Señal de tierra digital (verde claro).</li>
+<li>Pines digitales 2-13 (verde).</li>
+<li>Pines digitales 0-1 / entrada y salida del puerto serie: TX/RX (azul) (estándar de comunicación serie IC2).</li>
+<li>Botón de reset (negro).</li>
+<li>Entrada del circuito del programador serie (marrón).</li>
+<li>Pines de entrada analógica 0-5 (azul oscuro).</li>
+<li>Pines de alimentación y tierra (naranja y naranja claro).</li>
+<li>Entrada de la fuente de alimentación externa (9-12V DC) – X1 (gris).</li>
+<li><span style="font-size: small; line-height: 1.5;">Conmutación entre fuente de alimentación externa o alimentación a través del puerto USB – SV1. En las placas más reciente la conmutación de la alimentación se realiza con un MOSFET.</span></li>
+<li><span style="font-size: small; line-height: 1.5;">Puerto USB (rojo).</span></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id143">
+<div class="iDevice emphasis0">
+<div id="ta143_85" class="block iDevice_content">
+<p>Las placas: Arduino Diecimila, Arduino Duemilanove o UNO y Arduino Mega están basados en los microcontroladores Atmega168, Atmega 328 y Atmega1280 respectivamente.</p>
+<p>Las especificaciones de cada uno de los microcontroladores se exponen en la tabla siguiente:</p>
+<p><img src="Captura_de_pantalla_2015-04-06_a_las_12.04.32.png" width="500" height="270" alt="tabla-especificaciones" title="tabla-especificaciones" /></p>
+</div>
+</div>
+</div>
+<div class="iDevice_wrapper FreeTextIdevice" id="id146">
+<div class="iDevice emphasis0">
+<div id="ta146_85" class="block iDevice_content">
+<h3><span style="font-size: medium;">SHIELDS para Arduino</span></h3>
+<p><span size="2" style="font-size: small;">Las llamadas Shields (escudos) para Arduino son tarjetas que añaden funciones a la placa Arduino. </span></p>
+<p><span size="2" style="font-size: small;">Como se ha comentado antes, Arduino por sí sola no puede proporcionar la suficiente intensidad para alimentar motores, relés o electroválvulas. El límite de intensidad que proporciona cada una de las salidas digitales es de 40 mA. Para poder activar estos dispositivos tendremos que montar un circuito externo adicional con transistores o circuitos integrados específicos para motores, como es el caso del LM293, que entregan la intensidad suficiente. Para facilitarnos la tarea existen unas placas adaptadas a los pines de Arduino que se ensamblan directamente sobre ella a modo de "escudo" (de ahí su nombre, shileds) y nos permiten tener pines adicionales para alimentar las cargas que Arduino por sí solo no es capaz de mover.</span></p>
+<p><span size="2" style="font-size: small;">Hay también otro tipo de "shields" que proporcionan funciones como conexión Ethernet, WIFI, XBee, GSM, Host USB, etc... Actualmente hay decenas de ellas en el mercado. Puedes encontrar una larga lista de ellas en <a href="http://playground.arduino.cc/Main/SimilarBoards#goShie">http://playground.arduino.cc/Main/SimilarBoards#goShie</a></span></p>
+<p><span style="font-size: small; line-height: 1.5;">Algunos ejemplos:</span></p>
+<p><span style="font-size: small; line-height: 1.5;"><img src="edubasica01.jpg" width="250" height="167" alt="edubasica" title="Edubasica http://www.practicasconarduino.com" /><img src="Arduino_Ethernet_Shield.jpg" width="250" height="167" alt="ethernet" title="ethernet- http://commons.wikimedia.org/wiki/File%3AArduino_Ethernet_Shield.jpg CC -BY SA 2.0" /></span></p>
+<p></p>
+<p></p>
+<p></p>
+<p><span style="font-size: small; line-height: 1.5;"><img src="1762428107_baf60121e2_o.jpg" width="250" height="166" alt="xbee" title="xbee -https://www.flickr.com/photos/libelium/1762428107/ CC BY 2.0" /><img src="Triggertrap_shield_on_arduino.jpg" width="250" height="167" alt="motorshield" title="motorshield &quot;Triggertrap shield on arduino&quot; by Haje Jan Kamps - Licensed under CC BY-SA 3.0 via Wikimedia Commons " /></span></p>
+<div class="exe-figure exe-image position-center license-CC-BY-SA" style="width: 250px;"><br />
+<div class="figcaption"></div>
+</div>
+<p></p>
+<p><span style="font-size: small; line-height: 1.5;"> </span></p>
+<pre></pre>
+<p><span size="2" style="font-size: small;"> </span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id='bottomPagination'>
+<div class="pagination noprt">
+<a href="informacin_bsica_sobre_arduino.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="alimentacin_elctrica_de_arduino.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</div>
+</div>
+</div>
+<script type="text/javascript" src="_intef_js.js"></script></body></html>
